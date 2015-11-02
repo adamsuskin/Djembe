@@ -27,16 +27,12 @@
     [[[self pageViewController] view] setFrame:[[self view] bounds]];
     
     //Take care of drum view controllers
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    NSMutableArray *tempDrumArray = [[NSMutableArray alloc] initWithCapacity:3];
-    for (int i = 0; i < 3; i++) {
-        ASDrumViewController *drumViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"ASDrumViewController"];
-        [drumViewController setIndex:i];
-        
-        [tempDrumArray addObject:drumViewController];
-    }
+    ASDrumViewController *djembeController = [[ASDrumViewController alloc] initWithID:0 Drum:@"Djembe"];
+    ASDrumViewController *djunController = [[ASDrumViewController alloc] initWithID:1 Drum:@"Djun Djun"];
+    ASDrumViewController *tumbaController = [[ASDrumViewController alloc] initWithID:2 Drum:@"Tumbador"];
+    ASDrumViewController *ashikoController = [[ASDrumViewController alloc] initWithID:3 Drum:@"Ashiko"];
     
-    [self setDrumViewControllers:[NSArray arrayWithArray:(NSArray *)tempDrumArray]];
+    [self setDrumViewControllers:[NSArray arrayWithObjects:djembeController, djunController, tumbaController, ashikoController, nil]];
     [[self pageViewController] setViewControllers:[NSArray arrayWithObject:[[self drumViewControllers] objectAtIndex:0]]
                                         direction:UIPageViewControllerNavigationDirectionForward
                                          animated:YES

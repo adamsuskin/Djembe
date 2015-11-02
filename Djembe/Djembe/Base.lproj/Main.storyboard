@@ -66,6 +66,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="drumBackground" destination="fJZ-VE-asq" id="kCC-3e-A0n"/>
                         <outlet property="titleLabel" destination="xXu-Uc-3rS" id="LiV-8W-3Wp"/>
                         <outlet property="view" destination="Ckv-pa-9AN" id="GNf-Q6-KtM"/>
                     </connections>

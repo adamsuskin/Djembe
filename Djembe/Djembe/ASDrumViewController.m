@@ -14,10 +14,20 @@
 
 @implementation ASDrumViewController
 
-- (void)viewDidLoad {
+-(id)initWithID:(NSUInteger)idf Drum:(NSString *)drum {
+    self = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ASDrumViewController"];
+    if (self) {
+        [self setIndex:idf];
+        [self setDrum:drum];
+    }
+    return self;
+}
+
+-(void)viewDidLoad {
     [super viewDidLoad];
     
-    [[self titleLabel] setText:[NSString stringWithFormat:@"View controller %d", (int)[self index]]];
+    [[self titleLabel] setText:[self drum]];
+    [[self drumBackground] setImage:[UIImage imageNamed:[self drum]]];
 }
 
 @end
