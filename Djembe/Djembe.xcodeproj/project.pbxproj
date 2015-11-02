@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		663DD3271BE2A91F0055C634 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DD3261BE2A91F0055C634 /* main.m */; };
 		663DD32A1BE2A91F0055C634 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DD3291BE2A91F0055C634 /* AppDelegate.m */; };
-		663DD32D1BE2A91F0055C634 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DD32C1BE2A91F0055C634 /* ViewController.m */; };
 		663DD3301BE2A91F0055C634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD32E1BE2A91F0055C634 /* Main.storyboard */; };
 		663DD3321BE2A91F0055C634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3311BE2A91F0055C634 /* Assets.xcassets */; };
 		663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3331BE2A91F0055C634 /* LaunchScreen.storyboard */; };
+		66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		66CB61301BE6F1F7005F7BF7 /* ASDrumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612F1BE6F1F7005F7BF7 /* ASDrumViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,14 @@
 		663DD3261BE2A91F0055C634 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		663DD3281BE2A91F0055C634 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		663DD3291BE2A91F0055C634 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		663DD32B1BE2A91F0055C634 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		663DD32C1BE2A91F0055C634 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		663DD32F1BE2A91F0055C634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		663DD3311BE2A91F0055C634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		663DD3341BE2A91F0055C634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		663DD3361BE2A91F0055C634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66CB612B1BE6EEFE005F7BF7 /* ASRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRootViewController.h; sourceTree = "<group>"; };
+		66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRootViewController.m; sourceTree = "<group>"; };
+		66CB612E1BE6F1F7005F7BF7 /* ASDrumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDrumViewController.h; sourceTree = "<group>"; };
+		66CB612F1BE6F1F7005F7BF7 /* ASDrumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDrumViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +61,11 @@
 		663DD3241BE2A91F0055C634 /* Djembe */ = {
 			isa = PBXGroup;
 			children = (
+				66CB61261BE6EC2F005F7BF7 /* Model */,
+				66CB61251BE6EC24005F7BF7 /* View */,
+				66CB61271BE6EC35005F7BF7 /* Controller */,
 				663DD3281BE2A91F0055C634 /* AppDelegate.h */,
 				663DD3291BE2A91F0055C634 /* AppDelegate.m */,
-				663DD32B1BE2A91F0055C634 /* ViewController.h */,
-				663DD32C1BE2A91F0055C634 /* ViewController.m */,
-				663DD32E1BE2A91F0055C634 /* Main.storyboard */,
 				663DD3311BE2A91F0055C634 /* Assets.xcassets */,
 				663DD3331BE2A91F0055C634 /* LaunchScreen.storyboard */,
 				663DD3361BE2A91F0055C634 /* Info.plist */,
@@ -77,6 +80,32 @@
 				663DD3261BE2A91F0055C634 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66CB61251BE6EC24005F7BF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				663DD32E1BE2A91F0055C634 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		66CB61261BE6EC2F005F7BF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		66CB61271BE6EC35005F7BF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				66CB612B1BE6EEFE005F7BF7 /* ASRootViewController.h */,
+				66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */,
+				66CB612E1BE6F1F7005F7BF7 /* ASDrumViewController.h */,
+				66CB612F1BE6F1F7005F7BF7 /* ASDrumViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				663DD32D1BE2A91F0055C634 /* ViewController.m in Sources */,
+				66CB61301BE6F1F7005F7BF7 /* ASDrumViewController.m in Sources */,
 				663DD32A1BE2A91F0055C634 /* AppDelegate.m in Sources */,
 				663DD3271BE2A91F0055C634 /* main.m in Sources */,
+				66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +332,7 @@
 				663DD33B1BE2A91F0055C634 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
