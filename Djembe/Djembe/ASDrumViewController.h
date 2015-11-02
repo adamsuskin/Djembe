@@ -12,5 +12,6 @@
 
 @property (assign, nonatomic) NSUInteger index;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *drumBackground;
 
 @end
