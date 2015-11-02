@@ -30,7 +30,7 @@
     [[self drumBackground] setImage:[UIImage imageNamed:[self drum]]];
 }
 
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint location = [[[event allTouches] anyObject] locationInView:[self view]];
     
     float tapWidth = 30;
@@ -38,9 +38,7 @@
     [drumTapView setBackgroundColor:[UIColor clearColor]];
     [drumTapView setNeedsDisplay];
     [[self view] addSubview:drumTapView];
-    
-    [[drumTapView layer] setOpacity:0.0];
-    
+        
     float animDuration = 0.75;
     CGRect frame = [drumTapView frame];
     
@@ -54,12 +52,7 @@
                                                                     [drumTapView setFrame:CGRectInset(frame, -frame.size.width, -frame.size.height)];
                                                                 }];
                                   [UIView addKeyframeWithRelativeStartTime:0
-                                                          relativeDuration:2 * animDuration / 5
-                                                                animations:^{
-                                                                    [[drumTapView layer] setOpacity:1.0];
-                                                                }];
-                                  [UIView addKeyframeWithRelativeStartTime:animDuration / 5
-                                                          relativeDuration:3 * animDuration / 5
+                                                          relativeDuration:3*animDuration/5
                                                                 animations:^{
                                                                     [[drumTapView layer] setOpacity:0.0];
                                                                 }];

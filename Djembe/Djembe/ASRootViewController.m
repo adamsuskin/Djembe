@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:[[self view] bounds]];
+    [backgroundView setContentMode:UIViewContentModeTopLeft];
+    [backgroundView setImage:[UIImage imageNamed:@"dirt.jpg"]];
+    [[self view] addSubview:backgroundView];
+    
     //Set initial options
     [self setPageViewController:[[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                                 navigationOrientation: UIPageViewControllerNavigationOrientationHorizontal options:nil]];
@@ -29,19 +34,19 @@
     //Take care of drum view controllers
     ASDrumViewController *djembeController = [[ASDrumViewController alloc] initWithID:0 Drum:@"Djembe"];
     //color rgb(26, 188, 156)
-    [[djembeController view] setBackgroundColor:[UIColor colorWithRed:26.f/255.f green:188.f/255.f blue:156.f/255.f alpha:1]];
+    [[djembeController view] setBackgroundColor:[UIColor clearColor]];
     
     ASDrumViewController *djunController = [[ASDrumViewController alloc] initWithID:1 Drum:@"Djun Djun"];
     //color rgb(155, 89, 182)
-    [[djunController view] setBackgroundColor:[UIColor colorWithRed:155.f/255.f green:89.f/255.f blue:182.f/255.f alpha:1]];
+    [[djunController view] setBackgroundColor:[UIColor clearColor]];
     
     ASDrumViewController *tumbaController = [[ASDrumViewController alloc] initWithID:2 Drum:@"Tumbador"];
     //color rgb(231, 76, 60)
-    [[tumbaController view] setBackgroundColor:[UIColor colorWithRed:231.f/255.f green:76.f/255.f blue:60.f/255.f alpha:1]];
+    [[tumbaController view] setBackgroundColor:[UIColor clearColor]];
     
     ASDrumViewController *ashikoController = [[ASDrumViewController alloc] initWithID:3 Drum:@"Ashiko"];
     //color rgb(52, 152, 219)
-    [[ashikoController view] setBackgroundColor:[UIColor colorWithRed:52.f/255.f green:152.f/255.f blue:219.f/255.f alpha:1]];
+    [[ashikoController view] setBackgroundColor:[UIColor clearColor]];
     
     [self setDrumViewControllers:[NSArray arrayWithObjects:djembeController, djunController, tumbaController, ashikoController, nil]];
     [[self pageViewController] setViewControllers:[NSArray arrayWithObject:[[self drumViewControllers] objectAtIndex:0]]
@@ -55,6 +60,11 @@
     [[self view] addSubview:[[self pageViewController] view]];
     [[self pageViewController] didMoveToParentViewController:self];
      
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
