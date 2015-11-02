@@ -14,6 +14,10 @@
 		663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3331BE2A91F0055C634 /* LaunchScreen.storyboard */; };
 		66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */; settings = {ASSET_TAGS = (); }; };
 		66CB61301BE6F1F7005F7BF7 /* ASDrumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612F1BE6F1F7005F7BF7 /* ASDrumViewController.m */; settings = {ASSET_TAGS = (); }; };
+		66CB61361BE7D920005F7BF7 /* Ashiko.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61321BE7D920005F7BF7 /* Ashiko.png */; settings = {ASSET_TAGS = (); }; };
+		66CB61371BE7D920005F7BF7 /* Djembe.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61331BE7D920005F7BF7 /* Djembe.png */; settings = {ASSET_TAGS = (); }; };
+		66CB61381BE7D920005F7BF7 /* Djun Djun.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61341BE7D920005F7BF7 /* Djun Djun.png */; settings = {ASSET_TAGS = (); }; };
+		66CB61391BE7D920005F7BF7 /* Tumbador.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61351BE7D920005F7BF7 /* Tumbador.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,10 @@
 		66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRootViewController.m; sourceTree = "<group>"; };
 		66CB612E1BE6F1F7005F7BF7 /* ASDrumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDrumViewController.h; sourceTree = "<group>"; };
 		66CB612F1BE6F1F7005F7BF7 /* ASDrumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDrumViewController.m; sourceTree = "<group>"; };
+		66CB61321BE7D920005F7BF7 /* Ashiko.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ashiko.png; sourceTree = "<group>"; };
+		66CB61331BE7D920005F7BF7 /* Djembe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Djembe.png; sourceTree = "<group>"; };
+		66CB61341BE7D920005F7BF7 /* Djun Djun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Djun Djun.png"; sourceTree = "<group>"; };
+		66CB61351BE7D920005F7BF7 /* Tumbador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tumbador.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 		663DD3241BE2A91F0055C634 /* Djembe */ = {
 			isa = PBXGroup;
 			children = (
+				66CB61311BE7D912005F7BF7 /* Resources */,
 				66CB61261BE6EC2F005F7BF7 /* Model */,
 				66CB61251BE6EC24005F7BF7 /* View */,
 				66CB61271BE6EC35005F7BF7 /* Controller */,
@@ -106,6 +115,17 @@
 				66CB612F1BE6F1F7005F7BF7 /* ASDrumViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		66CB61311BE7D912005F7BF7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66CB61321BE7D920005F7BF7 /* Ashiko.png */,
+				66CB61331BE7D920005F7BF7 /* Djembe.png */,
+				66CB61341BE7D920005F7BF7 /* Djun Djun.png */,
+				66CB61351BE7D920005F7BF7 /* Tumbador.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +185,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66CB61381BE7D920005F7BF7 /* Djun Djun.png in Resources */,
+				66CB61371BE7D920005F7BF7 /* Djembe.png in Resources */,
+				66CB61361BE7D920005F7BF7 /* Ashiko.png in Resources */,
 				663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */,
 				663DD3321BE2A91F0055C634 /* Assets.xcassets in Resources */,
 				663DD3301BE2A91F0055C634 /* Main.storyboard in Resources */,
+				66CB61391BE7D920005F7BF7 /* Tumbador.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

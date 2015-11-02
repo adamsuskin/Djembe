@@ -45,25 +45,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fJZ-VE-asq">
-                                <rect key="frame" x="0.0" y="140" width="600" height="320"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="fJZ-VE-asq" secondAttribute="height" multiplier="15:8" id="kDP-Id-Lcx"/>
+                                    <constraint firstAttribute="width" secondItem="fJZ-VE-asq" secondAttribute="height" multiplier="1:1" id="QMf-AW-PM9"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fJZ-VE-asq" firstAttribute="centerY" secondItem="Ckv-pa-9AN" secondAttribute="centerY" id="4Rd-l5-psg"/>
                             <constraint firstItem="xXu-Uc-3rS" firstAttribute="leading" secondItem="Ckv-pa-9AN" secondAttribute="leadingMargin" constant="-20" id="7eL-Li-AjA"/>
-                            <constraint firstItem="fJZ-VE-asq" firstAttribute="height" relation="lessThanOrEqual" secondItem="Ckv-pa-9AN" secondAttribute="height" id="CgI-bY-Bre"/>
-                            <constraint firstItem="fJZ-VE-asq" firstAttribute="centerY" secondItem="Ckv-pa-9AN" secondAttribute="centerY" id="U8l-0f-rYG"/>
-                            <constraint firstItem="fJZ-VE-asq" firstAttribute="width" relation="lessThanOrEqual" secondItem="Ckv-pa-9AN" secondAttribute="width" id="Xoy-yK-Gb0"/>
-                            <constraint firstItem="fJZ-VE-asq" firstAttribute="height" secondItem="Ckv-pa-9AN" secondAttribute="height" priority="750" id="eQ6-gE-0P9"/>
+                            <constraint firstItem="fJZ-VE-asq" firstAttribute="width" relation="lessThanOrEqual" secondItem="Ckv-pa-9AN" secondAttribute="width" id="8nD-kr-S8I"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xXu-Uc-3rS" secondAttribute="trailing" constant="-20" id="fWm-ah-dOB"/>
+                            <constraint firstItem="fJZ-VE-asq" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="gD3-v9-1rl"/>
                             <constraint firstItem="xXu-Uc-3rS" firstAttribute="top" secondItem="W2F-A1-5F9" secondAttribute="bottom" constant="8" id="lxa-mm-S3i"/>
-                            <constraint firstItem="fJZ-VE-asq" firstAttribute="width" secondItem="Ckv-pa-9AN" secondAttribute="width" priority="750" id="usn-zJ-X7M"/>
-                            <constraint firstItem="fJZ-VE-asq" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="vJk-lE-TWz"/>
+                            <constraint firstItem="fJZ-VE-asq" firstAttribute="width" secondItem="Ckv-pa-9AN" secondAttribute="width" priority="750" id="pe9-y4-2Cl"/>
                             <constraint firstItem="xXu-Uc-3rS" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="xSr-fP-v1n"/>
                         </constraints>
                     </view>
