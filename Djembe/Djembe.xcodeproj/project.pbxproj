@@ -18,6 +18,7 @@
 		66CB61371BE7D920005F7BF7 /* Djembe.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61331BE7D920005F7BF7 /* Djembe.png */; settings = {ASSET_TAGS = (); }; };
 		66CB61381BE7D920005F7BF7 /* Djun Djun.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61341BE7D920005F7BF7 /* Djun Djun.png */; settings = {ASSET_TAGS = (); }; };
 		66CB61391BE7D920005F7BF7 /* Tumbador.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61351BE7D920005F7BF7 /* Tumbador.png */; settings = {ASSET_TAGS = (); }; };
+		66CB613C1BE7DFE3005F7BF7 /* ASDrumTapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB613B1BE7DFE3005F7BF7 /* ASDrumTapView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		66CB61331BE7D920005F7BF7 /* Djembe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Djembe.png; sourceTree = "<group>"; };
 		66CB61341BE7D920005F7BF7 /* Djun Djun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Djun Djun.png"; sourceTree = "<group>"; };
 		66CB61351BE7D920005F7BF7 /* Tumbador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tumbador.png; sourceTree = "<group>"; };
+		66CB613A1BE7DFE3005F7BF7 /* ASDrumTapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDrumTapView.h; sourceTree = "<group>"; };
+		66CB613B1BE7DFE3005F7BF7 /* ASDrumTapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDrumTapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				663DD32E1BE2A91F0055C634 /* Main.storyboard */,
+				66CB613A1BE7DFE3005F7BF7 /* ASDrumTapView.h */,
+				66CB613B1BE7DFE3005F7BF7 /* ASDrumTapView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				663DD32A1BE2A91F0055C634 /* AppDelegate.m in Sources */,
 				663DD3271BE2A91F0055C634 /* main.m in Sources */,
 				66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */,
+				66CB613C1BE7DFE3005F7BF7 /* ASDrumTapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

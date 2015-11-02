@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ASDrumTapView.h"
 
 @interface ASDrumViewController : UIViewController
 
