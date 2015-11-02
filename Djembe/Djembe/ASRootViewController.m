@@ -28,9 +28,20 @@
     
     //Take care of drum view controllers
     ASDrumViewController *djembeController = [[ASDrumViewController alloc] initWithID:0 Drum:@"Djembe"];
+    //color rgb(26, 188, 156)
+    [[djembeController view] setBackgroundColor:[UIColor colorWithRed:26.f/255.f green:188.f/255.f blue:156.f/255.f alpha:1]];
+    
     ASDrumViewController *djunController = [[ASDrumViewController alloc] initWithID:1 Drum:@"Djun Djun"];
+    //color rgb(155, 89, 182)
+    [[djunController view] setBackgroundColor:[UIColor colorWithRed:155.f/255.f green:89.f/255.f blue:182.f/255.f alpha:1]];
+    
     ASDrumViewController *tumbaController = [[ASDrumViewController alloc] initWithID:2 Drum:@"Tumbador"];
+    //color rgb(231, 76, 60)
+    [[tumbaController view] setBackgroundColor:[UIColor colorWithRed:231.f/255.f green:76.f/255.f blue:60.f/255.f alpha:1]];
+    
     ASDrumViewController *ashikoController = [[ASDrumViewController alloc] initWithID:3 Drum:@"Ashiko"];
+    //color rgb(52, 152, 219)
+    [[ashikoController view] setBackgroundColor:[UIColor colorWithRed:52.f/255.f green:152.f/255.f blue:219.f/255.f alpha:1]];
     
     [self setDrumViewControllers:[NSArray arrayWithObjects:djembeController, djunController, tumbaController, ashikoController, nil]];
     [[self pageViewController] setViewControllers:[NSArray arrayWithObject:[[self drumViewControllers] objectAtIndex:0]]
