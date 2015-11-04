@@ -12,7 +12,7 @@
 @interface ASRootViewController : UIViewController <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
 @property (strong, nonatomic) UIPageViewController *pageViewController;
-
+@property (assign, nonatomic) NSUInteger activeIndex;
 @property (strong, nonatomic) NSArray *drumViewControllers;
 
 @end

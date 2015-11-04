@@ -18,4 +18,6 @@
 
 -(id)initWithID:(NSUInteger)idf Drum:(NSString *)drum;
 
+-(void)animateTitle;
+
 @end
