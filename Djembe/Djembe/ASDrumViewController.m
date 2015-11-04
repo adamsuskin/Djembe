@@ -19,6 +19,8 @@
     if (self) {
         [self setIndex:idf];
         [self setDrum:drum];
+        
+        [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     }
     return self;
 }
@@ -30,6 +32,9 @@
     [[[self titleLabel] layer] setOpacity:0.0];
     
     [[self drumBackground] setImage:[UIImage imageNamed:[self drum]]];
+    
+    [self setInfoController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ASInfoViewController"]];
+    [[self infoController] setModalPresentationStyle:UIModalPresentationOverCurrentContext];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -79,6 +84,14 @@
                                           }
                                           completion:nil];
                      }];
+}
+
+- (IBAction)infoButtonTapped:(id)sender {
+    
+    [self presentViewController:[self infoController]
+                       animated:YES
+                     completion:nil];
+    
 }
 
 @end

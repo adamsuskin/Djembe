@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ASDrumTapView.h"
+#import "ASInfoViewController.h"
 
 @interface ASDrumViewController : UIViewController
 
@@ -15,6 +16,8 @@
 @property (assign, nonatomic) NSString *drum;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *drumBackground;
+
+@property (strong, nonatomic) IBOutlet ASInfoViewController *infoController;
 
 -(id)initWithID:(NSUInteger)idf Drum:(NSString *)drum;
 
