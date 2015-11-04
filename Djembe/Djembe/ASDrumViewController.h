@@ -15,6 +15,7 @@
 @property (assign, nonatomic) NSUInteger index;
 @property (assign, nonatomic) NSString *drum;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIView *titleView;
 @property (strong, nonatomic) IBOutlet UIImageView *drumBackground;
 
 @property (strong, nonatomic) IBOutlet ASInfoViewController *infoController;

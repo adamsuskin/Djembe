@@ -29,7 +29,9 @@
     [super viewDidLoad];
     
     [[self titleLabel] setText:[[self drum] uppercaseString]];
-    [[[self titleLabel] layer] setOpacity:0.0];
+    [[self titleLabel] setMinimumScaleFactor:0.5];
+    [[self titleLabel] setAdjustsFontSizeToFitWidth:YES];
+    [[[self titleView] layer] setOpacity:0.0];
     
     [[self drumBackground] setImage:[UIImage imageNamed:[self drum]]];
     
@@ -73,14 +75,14 @@
     
     [UIView animateWithDuration:0.3
                      animations:^{
-                         [[[self titleLabel] layer] setOpacity:1.0];
+                         [[[self titleView] layer] setOpacity:1.0];
                      }
                      completion:^(BOOL finished) {
                          [UIView animateWithDuration:0.3
                                                delay:0.2
                                              options:0
                                           animations:^{
-                                              [[[self titleLabel] layer] setOpacity:0.0];
+                                              [[[self titleView] layer] setOpacity:0.0];
                                           }
                                           completion:nil];
                      }];
