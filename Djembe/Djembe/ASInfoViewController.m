@@ -23,4 +23,8 @@
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [[self textView] setText:[self text]];
+}
+
 @end

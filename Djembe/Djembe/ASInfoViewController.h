@@ -10,6 +10,7 @@
 
 @interface ASInfoViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) NSString *text;
 
 @end

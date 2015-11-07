@@ -37,6 +37,11 @@
     
     [self setInfoController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ASInfoViewController"]];
     [[self infoController] setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:[self drum] ofType:@"txt"];
+    NSString *contents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    [[self infoController] setText:contents];
+
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
