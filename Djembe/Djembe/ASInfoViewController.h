@@ -10,4 +10,6 @@
 
 @interface ASInfoViewController : UIViewController
 
+@property (strong, nonatomic) NSString *text;
+
 @end

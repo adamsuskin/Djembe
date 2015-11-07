@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661F32011BED9C7A008A3CA7 /* Ashiko.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661F32001BED9C7A008A3CA7 /* Ashiko.txt */; };
+		661F32031BED9CE2008A3CA7 /* Djun Djun.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661F32021BED9CE2008A3CA7 /* Djun Djun.txt */; };
+		661F32051BED9D81008A3CA7 /* Tumbador.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661F32041BED9D81008A3CA7 /* Tumbador.txt */; };
+		661F32071BED9E16008A3CA7 /* Djembe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661F32061BED9E16008A3CA7 /* Djembe.txt */; };
 		663DD3271BE2A91F0055C634 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DD3261BE2A91F0055C634 /* main.m */; };
 		663DD32A1BE2A91F0055C634 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 663DD3291BE2A91F0055C634 /* AppDelegate.m */; };
 		663DD3301BE2A91F0055C634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD32E1BE2A91F0055C634 /* Main.storyboard */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		661F32001BED9C7A008A3CA7 /* Ashiko.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ashiko.txt; sourceTree = "<group>"; };
+		661F32021BED9CE2008A3CA7 /* Djun Djun.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Djun Djun.txt"; sourceTree = "<group>"; };
+		661F32041BED9D81008A3CA7 /* Tumbador.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tumbador.txt; sourceTree = "<group>"; };
+		661F32061BED9E16008A3CA7 /* Djembe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Djembe.txt; sourceTree = "<group>"; };
 		663DD3221BE2A91F0055C634 /* Djembe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Djembe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663DD3261BE2A91F0055C634 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		663DD3281BE2A91F0055C634 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,9 +141,13 @@
 			isa = PBXGroup;
 			children = (
 				6671AAAA1BE8172D00C0B06A /* dirt.jpg */,
+				661F32001BED9C7A008A3CA7 /* Ashiko.txt */,
 				66CB61321BE7D920005F7BF7 /* Ashiko.png */,
+				661F32061BED9E16008A3CA7 /* Djembe.txt */,
 				66CB61331BE7D920005F7BF7 /* Djembe.png */,
+				661F32021BED9CE2008A3CA7 /* Djun Djun.txt */,
 				66CB61341BE7D920005F7BF7 /* Djun Djun.png */,
+				661F32041BED9D81008A3CA7 /* Tumbador.txt */,
 				66CB61351BE7D920005F7BF7 /* Tumbador.png */,
 			);
 			name = Resources;
@@ -199,13 +211,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				66CB61381BE7D920005F7BF7 /* Djun Djun.png in Resources */,
+				661F32031BED9CE2008A3CA7 /* Djun Djun.txt in Resources */,
+				661F32011BED9C7A008A3CA7 /* Ashiko.txt in Resources */,
 				66CB61371BE7D920005F7BF7 /* Djembe.png in Resources */,
+				661F32051BED9D81008A3CA7 /* Tumbador.txt in Resources */,
 				6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */,
 				66CB61361BE7D920005F7BF7 /* Ashiko.png in Resources */,
 				663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */,
 				663DD3321BE2A91F0055C634 /* Assets.xcassets in Resources */,
 				663DD3301BE2A91F0055C634 /* Main.storyboard in Resources */,
 				66CB61391BE7D920005F7BF7 /* Tumbador.png in Resources */,
+				661F32071BED9E16008A3CA7 /* Djembe.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
