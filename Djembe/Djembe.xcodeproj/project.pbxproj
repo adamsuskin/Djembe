@@ -16,6 +16,8 @@
 		663DD3301BE2A91F0055C634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD32E1BE2A91F0055C634 /* Main.storyboard */; };
 		663DD3321BE2A91F0055C634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3311BE2A91F0055C634 /* Assets.xcassets */; };
 		663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3331BE2A91F0055C634 /* LaunchScreen.storyboard */; };
+		664D36741BF2E20F00CE5C0B /* ASSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 664D36731BF2E20F00CE5C0B /* ASSoundManager.m */; };
+		664D36761BF2E36C00CE5C0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */; };
 		666F766F1BE9B617002A999D /* ASInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666F766E1BE9B617002A999D /* ASInfoViewController.m */; };
 		6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6671AAAA1BE8172D00C0B06A /* dirt.jpg */; };
 		66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */; };
@@ -40,6 +42,9 @@
 		663DD3311BE2A91F0055C634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		663DD3341BE2A91F0055C634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		663DD3361BE2A91F0055C634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		664D36721BF2E20F00CE5C0B /* ASSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSoundManager.h; sourceTree = "<group>"; };
+		664D36731BF2E20F00CE5C0B /* ASSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSoundManager.m; sourceTree = "<group>"; };
+		664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		666F766D1BE9B617002A999D /* ASInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInfoViewController.h; sourceTree = "<group>"; };
 		666F766E1BE9B617002A999D /* ASInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInfoViewController.m; sourceTree = "<group>"; };
 		6671AAAA1BE8172D00C0B06A /* dirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt.jpg; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664D36761BF2E36C00CE5C0B /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +91,7 @@
 		663DD3241BE2A91F0055C634 /* Djembe */ = {
 			isa = PBXGroup;
 			children = (
+				664D36771BF2E37000CE5C0B /* Frameworks */,
 				66CB61311BE7D912005F7BF7 /* Resources */,
 				66CB61261BE6EC2F005F7BF7 /* Model */,
 				66CB61251BE6EC24005F7BF7 /* View */,
@@ -107,6 +114,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		664D36771BF2E37000CE5C0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		66CB61251BE6EC24005F7BF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +135,8 @@
 		66CB61261BE6EC2F005F7BF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				664D36721BF2E20F00CE5C0B /* ASSoundManager.h */,
+				664D36731BF2E20F00CE5C0B /* ASSoundManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -235,6 +252,7 @@
 				66CB61301BE6F1F7005F7BF7 /* ASDrumViewController.m in Sources */,
 				663DD32A1BE2A91F0055C634 /* AppDelegate.m in Sources */,
 				666F766F1BE9B617002A999D /* ASInfoViewController.m in Sources */,
+				664D36741BF2E20F00CE5C0B /* ASSoundManager.m in Sources */,
 				663DD3271BE2A91F0055C634 /* main.m in Sources */,
 				66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */,
 				66CB613C1BE7DFE3005F7BF7 /* ASDrumTapView.m in Sources */,
