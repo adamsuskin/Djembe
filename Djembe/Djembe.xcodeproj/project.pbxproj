@@ -20,6 +20,7 @@
 		664D36761BF2E36C00CE5C0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */; };
 		664D367A1BF2E89F00CE5C0B /* SD0010.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 664D36781BF2E89F00CE5C0B /* SD0010.mp3 */; };
 		664D367B1BF2E89F00CE5C0B /* SD0025.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 664D36791BF2E89F00CE5C0B /* SD0025.mp3 */; };
+		664D367D1BF2F4F700CE5C0B /* Splash Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 664D367C1BF2F4F700CE5C0B /* Splash Screen.png */; };
 		666F766F1BE9B617002A999D /* ASInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666F766E1BE9B617002A999D /* ASInfoViewController.m */; };
 		6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6671AAAA1BE8172D00C0B06A /* dirt.jpg */; };
 		66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */; };
@@ -49,6 +50,7 @@
 		664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		664D36781BF2E89F00CE5C0B /* SD0010.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SD0010.mp3; sourceTree = "<group>"; };
 		664D36791BF2E89F00CE5C0B /* SD0025.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SD0025.mp3; sourceTree = "<group>"; };
+		664D367C1BF2F4F700CE5C0B /* Splash Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash Screen.png"; sourceTree = "<group>"; };
 		666F766D1BE9B617002A999D /* ASInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInfoViewController.h; sourceTree = "<group>"; };
 		666F766E1BE9B617002A999D /* ASInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInfoViewController.m; sourceTree = "<group>"; };
 		6671AAAA1BE8172D00C0B06A /* dirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt.jpg; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		66CB61311BE7D912005F7BF7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				664D367C1BF2F4F700CE5C0B /* Splash Screen.png */,
 				664D36781BF2E89F00CE5C0B /* SD0010.mp3 */,
 				664D36791BF2E89F00CE5C0B /* SD0025.mp3 */,
 				6671AAAA1BE8172D00C0B06A /* dirt.jpg */,
@@ -238,6 +241,7 @@
 				664D367A1BF2E89F00CE5C0B /* SD0010.mp3 in Resources */,
 				661F32011BED9C7A008A3CA7 /* Ashiko.txt in Resources */,
 				66CB61371BE7D920005F7BF7 /* Djembe.png in Resources */,
+				664D367D1BF2F4F700CE5C0B /* Splash Screen.png in Resources */,
 				661F32051BED9D81008A3CA7 /* Tumbador.txt in Resources */,
 				664D367B1BF2E89F00CE5C0B /* SD0025.mp3 in Resources */,
 				6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */,

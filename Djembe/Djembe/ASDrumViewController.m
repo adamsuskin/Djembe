@@ -20,6 +20,11 @@
         [self setIndex:idf];
         [self setDrum:drum];
         
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        [tapGestureRecognizer setNumberOfTapsRequired:1];
+        [tapGestureRecognizer setNumberOfTouchesRequired:1];
+        [[self view] addGestureRecognizer:tapGestureRecognizer];
+        
         [self setModalPresentationStyle:UIModalPresentationCurrentContext];
     }
     return self;
@@ -62,8 +67,8 @@
     return 2;
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    CGPoint location = [[[event allTouches] anyObject] locationInView:[self view]];
+-(void)tap:(UITapGestureRecognizer *)tapGestureRecognizer {
+    CGPoint location = [tapGestureRecognizer locationInView:[self view]];
     
     switch ([self validateTouchLocation:location]) {
         case 0:
