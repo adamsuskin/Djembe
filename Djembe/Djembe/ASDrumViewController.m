@@ -44,8 +44,38 @@
 
 }
 
+-(CGFloat)distanceBetween:(CGPoint)point1 and:(CGPoint)point2 {
+    return (CGFloat)sqrtf(powf(point1.x - point2.x, 2) + powf(point1.y - point2.y, 2));
+}
+
+-(int)validateTouchLocation:(CGPoint)location {
+    CGPoint center = [[self view] center];
+    
+    CGFloat distance = [self distanceBetween:center and:location];
+    
+    if(distance - (self.view.frame.size.width * 9 / 20) > 0)
+        return 0;
+    
+    if(distance < self.view.frame.size.width / 4)
+        return 1;
+    
+    return 2;
+}
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint location = [[[event allTouches] anyObject] locationInView:[self view]];
+    
+    switch ([self validateTouchLocation:location]) {
+        case 0:
+            return;
+        case 1:
+            [[ASSoundManager sharedManager] playSoundNamed:@"SD0025" ofType:@"mp3"];
+            break;
+        case 2:
+        default:
+            [[ASSoundManager sharedManager] playSoundNamed:@"SD0010" ofType:@"mp3"];
+            break;
+    }
     
     float tapWidth = 30;
     ASDrumTapView *drumTapView = [[ASDrumTapView alloc] initWithFrame:CGRectMake(location.x - (tapWidth / 2), location.y - (tapWidth / 2), tapWidth, tapWidth)];

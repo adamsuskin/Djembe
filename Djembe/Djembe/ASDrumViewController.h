@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ASDrumTapView.h"
 #import "ASInfoViewController.h"
+#import "ASSoundManager.h"
 
 @interface ASDrumViewController : UIViewController
 
