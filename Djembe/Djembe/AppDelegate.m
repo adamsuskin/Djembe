@@ -16,7 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [[ASSoundManager sharedManager] createSoundNamed:@"Djun Djun.wav" ofType:nil];
+    [[ASSoundManager sharedManager] createSoundNamed:@"DjembeBass.wav" ofType:nil];
+    [[ASSoundManager sharedManager] createSoundNamed:@"DjembeEdge.wav" ofType:nil];
+    [[ASSoundManager sharedManager] createSoundNamed:@"TumbaBass.wav" ofType:nil];
+    [[ASSoundManager sharedManager] createSoundNamed:@"TumbaEdge.wav" ofType:nil];
+    [[ASSoundManager sharedManager] createSoundNamed:@"AshikoBass.wav" ofType:nil];
+    [[ASSoundManager sharedManager] createSoundNamed:@"AshikoEdge.wav" ofType:nil];
+    
     return YES;
 }
 

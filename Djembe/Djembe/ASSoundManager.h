@@ -15,6 +15,7 @@
 
 +(id)sharedManager;
 
+-(BOOL)createSoundNamed:(NSString *)soundFilename ofType:(NSString *)type;
 -(void)playSoundNamed:(NSString *)soundFilename ofType:(NSString *)type;
 
 @end

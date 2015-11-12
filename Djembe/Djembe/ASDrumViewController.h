@@ -19,6 +19,9 @@
 @property (strong, nonatomic) IBOutlet UIView *titleView;
 @property (strong, nonatomic) IBOutlet UIImageView *drumBackground;
 
+@property (strong, nonatomic) NSString *bassSoundFile;
+@property (strong, nonatomic) NSString *edgeSoundFile;
+
 @property (strong, nonatomic) IBOutlet ASInfoViewController *infoController;
 
 -(id)initWithID:(NSUInteger)idf Drum:(NSString *)drum;

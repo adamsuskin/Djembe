@@ -30,18 +30,27 @@
     [[self pageViewController] setDelegate:self];
     //Should occupy whole space of current view controller
     [[[self pageViewController] view] setFrame:[[self view] bounds]];
+    [[[self pageViewController] view] setMultipleTouchEnabled:YES];
     
     //Take care of drum view controllers
     ASDrumViewController *djembeController = [[ASDrumViewController alloc] initWithID:0 Drum:@"Djembe"];
+    [djembeController setBassSoundFile:@"DjembeBass.wav"];
+    [djembeController setEdgeSoundFile:@"DjembeEdge.wav"];
     [[djembeController view] setBackgroundColor:[UIColor clearColor]];
     
     ASDrumViewController *djunController = [[ASDrumViewController alloc] initWithID:1 Drum:@"Djun Djun"];
+    [djunController setBassSoundFile:@"Djun Djun.wav"];
+    [djunController setEdgeSoundFile:@"Djun Djun.wav"];
     [[djunController view] setBackgroundColor:[UIColor clearColor]];
     
     ASDrumViewController *tumbaController = [[ASDrumViewController alloc] initWithID:2 Drum:@"Tumbador"];
+    [tumbaController setBassSoundFile:@"TumbaBass.wav"];
+    [tumbaController setEdgeSoundFile:@"TumbaEdge.wav"];
     [[tumbaController view] setBackgroundColor:[UIColor clearColor]];
     
     ASDrumViewController *ashikoController = [[ASDrumViewController alloc] initWithID:3 Drum:@"Ashiko"];
+    [ashikoController setBassSoundFile:@"AshikoBass.wav"];
+    [ashikoController setEdgeSoundFile:@"AshikoEdge.wav"];
     [[ashikoController view] setBackgroundColor:[UIColor clearColor]];
     
     [self setActiveIndex:0];

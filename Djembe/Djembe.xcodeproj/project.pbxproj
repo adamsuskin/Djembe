@@ -18,11 +18,16 @@
 		663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3331BE2A91F0055C634 /* LaunchScreen.storyboard */; };
 		664D36741BF2E20F00CE5C0B /* ASSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 664D36731BF2E20F00CE5C0B /* ASSoundManager.m */; };
 		664D36761BF2E36C00CE5C0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */; };
-		664D367A1BF2E89F00CE5C0B /* SD0010.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 664D36781BF2E89F00CE5C0B /* SD0010.mp3 */; };
-		664D367B1BF2E89F00CE5C0B /* SD0025.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 664D36791BF2E89F00CE5C0B /* SD0025.mp3 */; };
 		664D367D1BF2F4F700CE5C0B /* Splash Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 664D367C1BF2F4F700CE5C0B /* Splash Screen.png */; };
 		666F766F1BE9B617002A999D /* ASInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666F766E1BE9B617002A999D /* ASInfoViewController.m */; };
 		6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6671AAAA1BE8172D00C0B06A /* dirt.jpg */; };
+		66893F261BF40B5000804542 /* DjembeBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F251BF40B5000804542 /* DjembeBass.wav */; };
+		66893F281BF40BE900804542 /* DjembeEdge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F271BF40BE900804542 /* DjembeEdge.wav */; };
+		66893F2B1BF40CF700804542 /* AshikoBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F291BF40CF700804542 /* AshikoBass.wav */; };
+		66893F2C1BF40CF700804542 /* AshikoEdge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F2A1BF40CF700804542 /* AshikoEdge.wav */; };
+		66893F2E1BF40CFF00804542 /* Djun Djun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F2D1BF40CFF00804542 /* Djun Djun.wav */; };
+		66893F311BF40D1300804542 /* TumbaBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F2F1BF40D1300804542 /* TumbaBass.wav */; };
+		66893F321BF40D1300804542 /* TumbaEdge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F301BF40D1300804542 /* TumbaEdge.wav */; };
 		66CB612D1BE6EEFE005F7BF7 /* ASRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */; };
 		66CB61301BE6F1F7005F7BF7 /* ASDrumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66CB612F1BE6F1F7005F7BF7 /* ASDrumViewController.m */; };
 		66CB61361BE7D920005F7BF7 /* Ashiko.png in Resources */ = {isa = PBXBuildFile; fileRef = 66CB61321BE7D920005F7BF7 /* Ashiko.png */; };
@@ -48,12 +53,17 @@
 		664D36721BF2E20F00CE5C0B /* ASSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSoundManager.h; sourceTree = "<group>"; };
 		664D36731BF2E20F00CE5C0B /* ASSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSoundManager.m; sourceTree = "<group>"; };
 		664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		664D36781BF2E89F00CE5C0B /* SD0010.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SD0010.mp3; sourceTree = "<group>"; };
-		664D36791BF2E89F00CE5C0B /* SD0025.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SD0025.mp3; sourceTree = "<group>"; };
 		664D367C1BF2F4F700CE5C0B /* Splash Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash Screen.png"; sourceTree = "<group>"; };
 		666F766D1BE9B617002A999D /* ASInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInfoViewController.h; sourceTree = "<group>"; };
 		666F766E1BE9B617002A999D /* ASInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInfoViewController.m; sourceTree = "<group>"; };
 		6671AAAA1BE8172D00C0B06A /* dirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt.jpg; sourceTree = "<group>"; };
+		66893F251BF40B5000804542 /* DjembeBass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DjembeBass.wav; sourceTree = "<group>"; };
+		66893F271BF40BE900804542 /* DjembeEdge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DjembeEdge.wav; sourceTree = "<group>"; };
+		66893F291BF40CF700804542 /* AshikoBass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AshikoBass.wav; sourceTree = "<group>"; };
+		66893F2A1BF40CF700804542 /* AshikoEdge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AshikoEdge.wav; sourceTree = "<group>"; };
+		66893F2D1BF40CFF00804542 /* Djun Djun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Djun Djun.wav"; sourceTree = "<group>"; };
+		66893F2F1BF40D1300804542 /* TumbaBass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TumbaBass.wav; sourceTree = "<group>"; };
+		66893F301BF40D1300804542 /* TumbaEdge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TumbaEdge.wav; sourceTree = "<group>"; };
 		66CB612B1BE6EEFE005F7BF7 /* ASRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASRootViewController.h; sourceTree = "<group>"; };
 		66CB612C1BE6EEFE005F7BF7 /* ASRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASRootViewController.m; sourceTree = "<group>"; };
 		66CB612E1BE6F1F7005F7BF7 /* ASDrumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDrumViewController.h; sourceTree = "<group>"; };
@@ -163,9 +173,14 @@
 		66CB61311BE7D912005F7BF7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				66893F2D1BF40CFF00804542 /* Djun Djun.wav */,
+				66893F291BF40CF700804542 /* AshikoBass.wav */,
+				66893F2A1BF40CF700804542 /* AshikoEdge.wav */,
+				66893F251BF40B5000804542 /* DjembeBass.wav */,
+				66893F271BF40BE900804542 /* DjembeEdge.wav */,
+				66893F2F1BF40D1300804542 /* TumbaBass.wav */,
+				66893F301BF40D1300804542 /* TumbaEdge.wav */,
 				664D367C1BF2F4F700CE5C0B /* Splash Screen.png */,
-				664D36781BF2E89F00CE5C0B /* SD0010.mp3 */,
-				664D36791BF2E89F00CE5C0B /* SD0025.mp3 */,
 				6671AAAA1BE8172D00C0B06A /* dirt.jpg */,
 				661F32001BED9C7A008A3CA7 /* Ashiko.txt */,
 				66CB61321BE7D920005F7BF7 /* Ashiko.png */,
@@ -238,19 +253,24 @@
 			files = (
 				66CB61381BE7D920005F7BF7 /* Djun Djun.png in Resources */,
 				661F32031BED9CE2008A3CA7 /* Djun Djun.txt in Resources */,
-				664D367A1BF2E89F00CE5C0B /* SD0010.mp3 in Resources */,
+				66893F2B1BF40CF700804542 /* AshikoBass.wav in Resources */,
+				66893F2C1BF40CF700804542 /* AshikoEdge.wav in Resources */,
+				66893F281BF40BE900804542 /* DjembeEdge.wav in Resources */,
 				661F32011BED9C7A008A3CA7 /* Ashiko.txt in Resources */,
 				66CB61371BE7D920005F7BF7 /* Djembe.png in Resources */,
 				664D367D1BF2F4F700CE5C0B /* Splash Screen.png in Resources */,
 				661F32051BED9D81008A3CA7 /* Tumbador.txt in Resources */,
-				664D367B1BF2E89F00CE5C0B /* SD0025.mp3 in Resources */,
 				6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */,
 				66CB61361BE7D920005F7BF7 /* Ashiko.png in Resources */,
+				66893F321BF40D1300804542 /* TumbaEdge.wav in Resources */,
+				66893F261BF40B5000804542 /* DjembeBass.wav in Resources */,
 				663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */,
 				663DD3321BE2A91F0055C634 /* Assets.xcassets in Resources */,
 				663DD3301BE2A91F0055C634 /* Main.storyboard in Resources */,
+				66893F2E1BF40CFF00804542 /* Djun Djun.wav in Resources */,
 				66CB61391BE7D920005F7BF7 /* Tumbador.png in Resources */,
 				661F32071BED9E16008A3CA7 /* Djembe.txt in Resources */,
+				66893F311BF40D1300804542 /* TumbaBass.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
