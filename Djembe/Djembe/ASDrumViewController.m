@@ -47,6 +47,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:[self drum] ofType:@"txt"];
     NSString *contents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     [[self infoController] setText:contents];
+    [[[self infoController] textView] setContentOffset:CGPointZero];
 
 }
 
@@ -134,8 +135,8 @@
     
     [self presentViewController:[self infoController]
                        animated:YES
-                     completion:nil];
-    
+                     completion:^{
+                     }];
 }
 
 @end

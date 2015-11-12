@@ -44,13 +44,20 @@
                                     <constraint firstAttribute="width" secondItem="fJZ-VE-asq" secondAttribute="height" multiplier="1:1" id="QMf-AW-PM9"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XR-NU-mxp">
-                                <rect key="frame" x="550" y="550" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XR-NU-mxp">
+                                <rect key="frame" x="540" y="540" width="40" height="40"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1Fj-Ic-W0U"/>
+                                    <constraint firstAttribute="width" secondItem="5XR-NU-mxp" secondAttribute="height" multiplier="1:1" id="BJG-4u-nTB"/>
                                     <constraint firstAttribute="width" constant="30" id="WeU-CY-D3x"/>
                                 </constraints>
-                                <state key="normal" title="Info"/>
+                                <state key="normal" image="Info Button.png"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WeU-CY-D3x"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="infoButtonTapped:" destination="sCv-Ae-7Fy" eventType="touchUpInside" id="qeB-jx-W59"/>
                                 </connections>
@@ -114,24 +121,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c55-2o-G2D">
-                                <rect key="frame" x="541" y="28" width="39" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c55-2o-G2D">
+                                <rect key="frame" x="540" y="28" width="40" height="40"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="c55-2o-G2D" secondAttribute="height" multiplier="1:1" id="HeJ-TS-RIz"/>
                                     <constraint firstAttribute="width" constant="39" id="UNw-Es-uCb"/>
+                                    <constraint firstAttribute="width" constant="40" id="pfb-D2-xGJ"/>
                                 </constraints>
-                                <state key="normal" title="Close"/>
+                                <state key="normal" image="X_Button_Blue.png"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UNw-Es-uCb"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="closeButtonTapped:" destination="FIQ-7p-ye7" eventType="touchUpInside" id="mxr-en-9KH"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="HN2-Rr-T4o">
-                                <rect key="frame" x="20" y="73" width="560" height="507"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN2-Rr-T4o">
+                                <rect key="frame" x="20" y="83" width="560" height="497"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -155,4 +169,8 @@
             <point key="canvasLocation" x="635" y="1400"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Info Button.png" width="72" height="72"/>
+        <image name="X_Button_Blue.png" width="164" height="164"/>
+    </resources>
 </document>

@@ -25,6 +25,13 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [[self textView] setText:[self text]];
+    [[self textView] setScrollEnabled:YES];
+}
+
+-(void)viewDidLoad {
+    
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    [[self textView] scrollRangeToVisible:NSMakeRange(0, 1)];
 }
 
 @end
