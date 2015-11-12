@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660DB3C71BF449CA00A2CD5C /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 660DB3C61BF449CA00A2CD5C /* LaunchScreen.png */; };
 		661F32011BED9C7A008A3CA7 /* Ashiko.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661F32001BED9C7A008A3CA7 /* Ashiko.txt */; };
 		661F32031BED9CE2008A3CA7 /* Djun Djun.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661F32021BED9CE2008A3CA7 /* Djun Djun.txt */; };
 		661F32051BED9D81008A3CA7 /* Tumbador.txt in Resources */ = {isa = PBXBuildFile; fileRef = 661F32041BED9D81008A3CA7 /* Tumbador.txt */; };
@@ -18,7 +19,6 @@
 		663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3331BE2A91F0055C634 /* LaunchScreen.storyboard */; };
 		664D36741BF2E20F00CE5C0B /* ASSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 664D36731BF2E20F00CE5C0B /* ASSoundManager.m */; };
 		664D36761BF2E36C00CE5C0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */; };
-		664D367D1BF2F4F700CE5C0B /* Splash Screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 664D367C1BF2F4F700CE5C0B /* Splash Screen.png */; };
 		666F766F1BE9B617002A999D /* ASInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666F766E1BE9B617002A999D /* ASInfoViewController.m */; };
 		6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6671AAAA1BE8172D00C0B06A /* dirt.jpg */; };
 		66893F261BF40B5000804542 /* DjembeBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F251BF40B5000804542 /* DjembeBass.wav */; };
@@ -40,11 +40,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		660DB3C61BF449CA00A2CD5C /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
 		661F32001BED9C7A008A3CA7 /* Ashiko.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ashiko.txt; sourceTree = "<group>"; };
 		661F32021BED9CE2008A3CA7 /* Djun Djun.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Djun Djun.txt"; sourceTree = "<group>"; };
 		661F32041BED9D81008A3CA7 /* Tumbador.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tumbador.txt; sourceTree = "<group>"; };
 		661F32061BED9E16008A3CA7 /* Djembe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Djembe.txt; sourceTree = "<group>"; };
-		663DD3221BE2A91F0055C634 /* Djembe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Djembe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		663DD3221BE2A91F0055C634 /* Djun Djun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Djun Djun.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		663DD3261BE2A91F0055C634 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		663DD3281BE2A91F0055C634 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		663DD3291BE2A91F0055C634 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,7 +56,6 @@
 		664D36721BF2E20F00CE5C0B /* ASSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSoundManager.h; sourceTree = "<group>"; };
 		664D36731BF2E20F00CE5C0B /* ASSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSoundManager.m; sourceTree = "<group>"; };
 		664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		664D367C1BF2F4F700CE5C0B /* Splash Screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash Screen.png"; sourceTree = "<group>"; };
 		666F766D1BE9B617002A999D /* ASInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInfoViewController.h; sourceTree = "<group>"; };
 		666F766E1BE9B617002A999D /* ASInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInfoViewController.m; sourceTree = "<group>"; };
 		6671AAAA1BE8172D00C0B06A /* dirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt.jpg; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		663DD3231BE2A91F0055C634 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				663DD3221BE2A91F0055C634 /* Djembe.app */,
+				663DD3221BE2A91F0055C634 /* Djun Djun.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +177,7 @@
 		66CB61311BE7D912005F7BF7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				660DB3C61BF449CA00A2CD5C /* LaunchScreen.png */,
 				66893F351BF4153600804542 /* X_Button_Blue.png */,
 				66893F331BF4152900804542 /* Info Button.png */,
 				66893F2D1BF40CFF00804542 /* Djun Djun.wav */,
@@ -186,7 +187,6 @@
 				66893F271BF40BE900804542 /* DjembeEdge.wav */,
 				66893F2F1BF40D1300804542 /* TumbaBass.wav */,
 				66893F301BF40D1300804542 /* TumbaEdge.wav */,
-				664D367C1BF2F4F700CE5C0B /* Splash Screen.png */,
 				6671AAAA1BE8172D00C0B06A /* dirt.jpg */,
 				661F32001BED9C7A008A3CA7 /* Ashiko.txt */,
 				66CB61321BE7D920005F7BF7 /* Ashiko.png */,
@@ -203,9 +203,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		663DD3211BE2A91F0055C634 /* Djembe */ = {
+		663DD3211BE2A91F0055C634 /* Djun Djun */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 663DD3391BE2A91F0055C634 /* Build configuration list for PBXNativeTarget "Djembe" */;
+			buildConfigurationList = 663DD3391BE2A91F0055C634 /* Build configuration list for PBXNativeTarget "Djun Djun" */;
 			buildPhases = (
 				663DD31E1BE2A91F0055C634 /* Sources */,
 				663DD31F1BE2A91F0055C634 /* Frameworks */,
@@ -215,9 +215,9 @@
 			);
 			dependencies = (
 			);
-			name = Djembe;
+			name = "Djun Djun";
 			productName = Djembe;
-			productReference = 663DD3221BE2A91F0055C634 /* Djembe.app */;
+			productReference = 663DD3221BE2A91F0055C634 /* Djun Djun.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,6 +231,7 @@
 				TargetAttributes = {
 					663DD3211BE2A91F0055C634 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 3879JAP7LS;
 					};
 				};
 			};
@@ -247,7 +248,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				663DD3211BE2A91F0055C634 /* Djembe */,
+				663DD3211BE2A91F0055C634 /* Djun Djun */,
 			);
 		};
 /* End PBXProject section */
@@ -259,13 +260,13 @@
 			files = (
 				66CB61381BE7D920005F7BF7 /* Djun Djun.png in Resources */,
 				661F32031BED9CE2008A3CA7 /* Djun Djun.txt in Resources */,
+				660DB3C71BF449CA00A2CD5C /* LaunchScreen.png in Resources */,
 				66893F341BF4152900804542 /* Info Button.png in Resources */,
 				66893F2B1BF40CF700804542 /* AshikoBass.wav in Resources */,
 				66893F2C1BF40CF700804542 /* AshikoEdge.wav in Resources */,
 				66893F281BF40BE900804542 /* DjembeEdge.wav in Resources */,
 				661F32011BED9C7A008A3CA7 /* Ashiko.txt in Resources */,
 				66CB61371BE7D920005F7BF7 /* Djembe.png in Resources */,
-				664D367D1BF2F4F700CE5C0B /* Splash Screen.png in Resources */,
 				661F32051BED9D81008A3CA7 /* Tumbador.txt in Resources */,
 				66893F361BF4153600804542 /* X_Button_Blue.png in Resources */,
 				6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */,
@@ -407,11 +408,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Djembe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamsuskin.Djembe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -419,11 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Djembe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adamsuskin.Djembe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -439,7 +444,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		663DD3391BE2A91F0055C634 /* Build configuration list for PBXNativeTarget "Djembe" */ = {
+		663DD3391BE2A91F0055C634 /* Build configuration list for PBXNativeTarget "Djun Djun" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				663DD33A1BE2A91F0055C634 /* Debug */,

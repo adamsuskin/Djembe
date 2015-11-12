@@ -33,15 +33,15 @@
     [[[self pageViewController] view] setMultipleTouchEnabled:YES];
     
     //Take care of drum view controllers
-    ASDrumViewController *djembeController = [[ASDrumViewController alloc] initWithID:0 Drum:@"Djembe"];
-    [djembeController setBassSoundFile:@"DjembeBass.wav"];
-    [djembeController setEdgeSoundFile:@"DjembeEdge.wav"];
-    [[djembeController view] setBackgroundColor:[UIColor clearColor]];
-    
-    ASDrumViewController *djunController = [[ASDrumViewController alloc] initWithID:1 Drum:@"Djun Djun"];
+    ASDrumViewController *djunController = [[ASDrumViewController alloc] initWithID:0 Drum:@"Djun Djun"];
     [djunController setBassSoundFile:@"Djun Djun.wav"];
     [djunController setEdgeSoundFile:@"Djun Djun.wav"];
     [[djunController view] setBackgroundColor:[UIColor clearColor]];
+    
+    ASDrumViewController *djembeController = [[ASDrumViewController alloc] initWithID:1 Drum:@"Djembe"];
+    [djembeController setBassSoundFile:@"DjembeBass.wav"];
+    [djembeController setEdgeSoundFile:@"DjembeEdge.wav"];
+    [[djembeController view] setBackgroundColor:[UIColor clearColor]];
     
     ASDrumViewController *tumbaController = [[ASDrumViewController alloc] initWithID:2 Drum:@"Tumbador"];
     [tumbaController setBassSoundFile:@"TumbaBass.wav"];
@@ -54,7 +54,7 @@
     [[ashikoController view] setBackgroundColor:[UIColor clearColor]];
     
     [self setActiveIndex:0];
-    [self setDrumViewControllers:[NSArray arrayWithObjects:djembeController, djunController, tumbaController, ashikoController, nil]];
+    [self setDrumViewControllers:[NSArray arrayWithObjects:djunController, djembeController, tumbaController, ashikoController, nil]];
     [[self pageViewController] setViewControllers:[NSArray arrayWithObject:[[self drumViewControllers] objectAtIndex:0]]
                                         direction:UIPageViewControllerNavigationDirectionForward
                                          animated:YES
