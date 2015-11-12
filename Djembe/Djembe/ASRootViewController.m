@@ -67,7 +67,17 @@
     [[self pageViewController] didMoveToParentViewController:self];
     
     [(ASDrumViewController *)[[[self pageViewController] viewControllers] objectAtIndex:0] animateTitle];
-     
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Welcome!"
+                                                                   message:@"Make sure to turn off vibrate and turn up the volume!"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Sounds good!" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle
