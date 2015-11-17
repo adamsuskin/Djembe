@@ -10,6 +10,10 @@
 
 @interface ASDrumViewController ()
 
+@property (assign) BOOL isRecording;
+@property (assign) NSTimeInterval timeSinceLastTap;
+@property (strong, nonatomic) NSDate *lastDate;
+
 @end
 
 @implementation ASDrumViewController
@@ -19,6 +23,10 @@
     if (self) {
         [self setIndex:idf];
         [self setDrum:drum];
+        [self setIsRecording:NO];
+        [self setTimers:[[NSMutableArray alloc] init]];
+        [self setTimeSinceLastTap:0];
+        [self setLastDate:[NSDate date]];
         
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         [tapGestureRecognizer setNumberOfTapsRequired:1];
@@ -69,50 +77,56 @@
     return 2;
 }
 
-    -(void)tap:(UITapGestureRecognizer *)tapGestureRecognizer {
-        
-        CGPoint location = [tapGestureRecognizer locationInView:[self view]];
-        
-        switch ([self validateTouchLocation:location]) {
-            case 0:
-                return;
-            case 1:
-                [[ASSoundManager sharedManager] playSoundNamed:[self bassSoundFile] ofType:nil];
-                break;
-            case 2:
-            default:
-                [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
-                break;
-        }
-        
-        float tapWidth = 30;
-        ASDrumTapView *drumTapView = [[ASDrumTapView alloc] initWithFrame:CGRectMake(location.x - (tapWidth / 2), location.y - (tapWidth / 2), tapWidth, tapWidth)];
-        [drumTapView setBackgroundColor:[UIColor clearColor]];
-        [drumTapView setNeedsDisplay];
-        [[self view] addSubview:drumTapView];
-            
-        float animDuration = 0.75;
-        CGRect frame = [drumTapView frame];
-        
-        [UIView animateKeyframesWithDuration:animDuration
-                                       delay:0.0
-                                     options:UIViewKeyframeAnimationOptionAllowUserInteraction
-                                  animations:^{
-                                      [UIView addKeyframeWithRelativeStartTime:0
-                                                              relativeDuration:animDuration
-                                                                    animations:^{
-                                                                        [drumTapView setFrame:CGRectInset(frame, -frame.size.width, -frame.size.height)];
-                                                                    }];
-                                      [UIView addKeyframeWithRelativeStartTime:0
-                                                              relativeDuration:3*animDuration/5
-                                                                    animations:^{
-                                                                        [[drumTapView layer] setOpacity:0.0];
-                                                                    }];
-                                  }
-                                  completion:^(BOOL finished) {
-                                      [drumTapView removeFromSuperview];
-                                  }];
+-(void)tap:(UITapGestureRecognizer *)tapGestureRecognizer {
+    
+    if ([self isRecording]) {
+        NSDate *date = [NSDate date];
+        [self setTimeSinceLastTap:[date timeIntervalSinceDate:[self lastDate]]];
+        [self setLastDate:date];
     }
+    
+    CGPoint location = [tapGestureRecognizer locationInView:[self view]];
+    
+    switch ([self validateTouchLocation:location]) {
+        case 0:
+            return;
+        case 1:
+            [[ASSoundManager sharedManager] playSoundNamed:[self bassSoundFile] ofType:nil];
+            break;
+        case 2:
+        default:
+            [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
+            break;
+    }
+    
+    float tapWidth = 30;
+    ASDrumTapView *drumTapView = [[ASDrumTapView alloc] initWithFrame:CGRectMake(location.x - (tapWidth / 2), location.y - (tapWidth / 2), tapWidth, tapWidth)];
+    [drumTapView setBackgroundColor:[UIColor clearColor]];
+    [drumTapView setNeedsDisplay];
+    [[self view] addSubview:drumTapView];
+        
+    float animDuration = 0.75;
+    CGRect frame = [drumTapView frame];
+    
+    [UIView animateKeyframesWithDuration:animDuration
+                                   delay:0.0
+                                 options:UIViewKeyframeAnimationOptionAllowUserInteraction
+                              animations:^{
+                                  [UIView addKeyframeWithRelativeStartTime:0
+                                                          relativeDuration:animDuration
+                                                                animations:^{
+                                                                    [drumTapView setFrame:CGRectInset(frame, -frame.size.width, -frame.size.height)];
+                                                                }];
+                                  [UIView addKeyframeWithRelativeStartTime:0
+                                                          relativeDuration:3*animDuration/5
+                                                                animations:^{
+                                                                    [[drumTapView layer] setOpacity:0.0];
+                                                                }];
+                              }
+                              completion:^(BOOL finished) {
+                                  [drumTapView removeFromSuperview];
+                              }];
+}
 
 -(void)animateTitle {
     
@@ -129,6 +143,20 @@
                                           }
                                           completion:nil];
                      }];
+}
+
+- (IBAction)recordButtonTapped:(id)sender {
+    
+    if([self isRecording]) {
+        [self setIsRecording:NO];
+        
+        NSLog(@"%f", [self timeSinceLastTap]);
+    }
+    
+    else {
+        [self setIsRecording:YES];
+    }
+    
 }
 
 - (IBAction)infoButtonTapped:(id)sender {

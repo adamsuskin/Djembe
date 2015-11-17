@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic) IBOutlet ASInfoViewController *infoController;
 
+@property (strong, nonatomic) NSMutableArray *timers;
+
 -(id)initWithID:(NSUInteger)idf Drum:(NSString *)drum;
 
 -(void)animateTitle;
