@@ -11,6 +11,7 @@
 @interface ASDrumViewController ()
 
 @property (assign) BOOL isRecording;
+@property (assign) BOOL isBassHit;
 @property (assign) NSTimeInterval timeSinceLastTap;
 @property (strong, nonatomic) NSDate *lastDate;
 
@@ -26,6 +27,7 @@
         [self setIsRecording:NO];
         [self setTimers:[[NSMutableArray alloc] init]];
         [self setTimeSinceLastTap:0];
+        [self setIsBassHit:YES];
         [self setLastDate:[NSDate date]];
         
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
@@ -92,10 +94,12 @@
             return;
         case 1:
             [[ASSoundManager sharedManager] playSoundNamed:[self bassSoundFile] ofType:nil];
+            [self setIsBassHit:YES];
             break;
         case 2:
         default:
             [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
+            [self setIsBassHit:NO];
             break;
     }
     
@@ -145,12 +149,23 @@
                      }];
 }
 
+- (void)loopPlay:(id)timer {
+    if([(NSNumber *)[(NSTimer *)timer userInfo] boolValue])
+        [[ASSoundManager sharedManager] playSoundNamed:[self bassSoundFile] ofType:nil];
+    else
+        [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
+}
+
 - (IBAction)recordButtonTapped:(id)sender {
     
     if([self isRecording]) {
         [self setIsRecording:NO];
         
-        NSLog(@"%f", [self timeSinceLastTap]);
+        [[self timers] addObject:[NSTimer scheduledTimerWithTimeInterval:[self timeSinceLastTap]
+                                                          target:self
+                                                        selector:@selector(loopPlay:)
+                                                        userInfo:[NSNumber numberWithBool:[self isBassHit]]
+                                                         repeats:YES]];
     }
     
     else {
