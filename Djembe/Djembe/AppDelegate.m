@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[ASSoundManager sharedManager] createSoundNamed:@"Metronome.wav" ofType:nil];
     [[ASSoundManager sharedManager] createSoundNamed:@"Djun Djun.wav" ofType:nil];
     [[ASSoundManager sharedManager] createSoundNamed:@"DjembeBass.wav" ofType:nil];
     [[ASSoundManager sharedManager] createSoundNamed:@"DjembeEdge.wav" ofType:nil];

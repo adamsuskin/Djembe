@@ -12,10 +12,14 @@
 @interface ASSoundManager : NSObject
 
 @property (strong, nonatomic) NSMutableDictionary *soundDictionary;
+@property (strong, nonatomic) NSTimer *metronome;
 
 +(id)sharedManager;
 
 -(BOOL)createSoundNamed:(NSString *)soundFilename ofType:(NSString *)type;
 -(void)playSoundNamed:(NSString *)soundFilename ofType:(NSString *)type;
+
+-(void)startMetronome;
+-(void)stopMetronome;
 
 @end

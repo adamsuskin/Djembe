@@ -24,13 +24,23 @@
 -(id)init {
     self = [super init];
     if (self) {
-        [self setSoundDictionary:[[NSMutableDictionary alloc] initWithCapacity:8]];
+        [self setSoundDictionary:[[NSMutableDictionary alloc] initWithCapacity:9]];
+        [self createMetronome];
+        
     }
     return self;
 }
 
 -(void)dealloc {
     [self cleanUpSounds];
+}
+
+-(void)createMetronome {
+    [self setMetronome:[NSTimer timerWithTimeInterval:1.0
+                                               target:self
+                                             selector:@selector(playMetronome)
+                                             userInfo:nil
+                                              repeats:YES]];
 }
 
 -(void)cleanUpSounds {
@@ -69,6 +79,20 @@
         [self createSoundNamed:soundFilename ofType:type];
     
     AudioServicesPlaySystemSound([self getSoundID:soundFilename]);
+}
+
+-(void)playMetronome {
+    [self playSoundNamed:@"Metronome.wav" ofType:nil];
+}
+
+-(void)startMetronome {
+    [[NSRunLoop mainRunLoop] addTimer:[self metronome] forMode:NSDefaultRunLoopMode];
+}
+
+-(void)stopMetronome {
+    [[self metronome] invalidate];
+    
+    [self createMetronome];
 }
 
 @end
