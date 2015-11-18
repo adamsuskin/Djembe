@@ -12,8 +12,6 @@
 
 @property (assign) BOOL isRecording;
 @property (assign) BOOL isBassHit;
-@property (assign) NSTimeInterval timeSinceLastTap;
-@property (strong, nonatomic) NSDate *lastDate;
 
 @end
 
@@ -25,10 +23,9 @@
         [self setIndex:idf];
         [self setDrum:drum];
         [self setIsRecording:NO];
-        [self setTimers:[[NSMutableArray alloc] init]];
-        [self setTimeSinceLastTap:0];
         [self setIsBassHit:YES];
-        [self setLastDate:[NSDate date]];
+        
+        [self setTimers:[[NSMutableArray alloc] init]];
         
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         [tapGestureRecognizer setNumberOfTapsRequired:1];
@@ -81,12 +78,6 @@
 
 -(void)tap:(UITapGestureRecognizer *)tapGestureRecognizer {
     
-    if ([self isRecording]) {
-        NSDate *date = [NSDate date];
-        [self setTimeSinceLastTap:[date timeIntervalSinceDate:[self lastDate]]];
-        [self setLastDate:date];
-    }
-    
     CGPoint location = [tapGestureRecognizer locationInView:[self view]];
     
     switch ([self validateTouchLocation:location]) {
@@ -101,6 +92,14 @@
             [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
             [self setIsBassHit:NO];
             break;
+    }
+    
+    if([self isRecording]) {
+        [[self timers] addObject:[NSTimer scheduledTimerWithTimeInterval:4.0
+                                                                  target:self
+                                                                selector:@selector(loopPlay:)
+                                                                userInfo:[NSNumber numberWithBool:[self isBassHit]]
+                                                                 repeats:YES]];
     }
     
     float tapWidth = 30;
@@ -157,21 +156,14 @@
 }
 
 - (IBAction)recordButtonTapped:(id)sender {
-    
     if([self isRecording]) {
         [self setIsRecording:NO];
-        
-        [[self timers] addObject:[NSTimer scheduledTimerWithTimeInterval:[self timeSinceLastTap]
-                                                          target:self
-                                                        selector:@selector(loopPlay:)
-                                                        userInfo:[NSNumber numberWithBool:[self isBassHit]]
-                                                         repeats:YES]];
+        [[ASSoundManager sharedManager] stopMetronome];
     }
-    
     else {
         [self setIsRecording:YES];
+        [[ASSoundManager sharedManager] startMetronome];
     }
-    
 }
 
 - (IBAction)infoButtonTapped:(id)sender {
