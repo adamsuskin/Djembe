@@ -49,15 +49,34 @@
                                 <color key="textColor" red="0.0" green="0.87450980392156863" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="4" maxValue="16" translatesAutoresizingMaskIntoConstraints="NO" id="TNF-M0-Di3" customClass="JMMarkSlider">
+                                <rect key="frame" x="18" y="42" width="483" height="31"/>
+                                <animations/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwX-bd-fVV">
+                                <rect key="frame" x="507" y="40" width="73" height="33"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="9WP-vJ-wkr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="28"/>
+                                <color key="textColor" red="0.043137254901960784" green="0.87450980392156863" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xex-2E-MLH" firstAttribute="leading" secondItem="a0s-py-lCN" secondAttribute="trailing" constant="8" id="2SO-7u-U6K"/>
+                            <constraint firstItem="TNF-M0-Di3" firstAttribute="leading" secondItem="gA8-w2-4P2" secondAttribute="leadingMargin" id="4LZ-qn-k8D"/>
+                            <constraint firstItem="AwX-bd-fVV" firstAttribute="trailing" secondItem="gA8-w2-4P2" secondAttribute="trailingMargin" id="5pg-Ea-ceK"/>
                             <constraint firstItem="a0s-py-lCN" firstAttribute="leading" secondItem="gA8-w2-4P2" secondAttribute="leadingMargin" id="AEm-8x-H5T"/>
                             <constraint firstItem="5XR-NU-mxp" firstAttribute="trailing" secondItem="gA8-w2-4P2" secondAttribute="trailingMargin" id="Aa0-rg-4zD"/>
                             <constraint firstItem="xex-2E-MLH" firstAttribute="centerY" secondItem="a0s-py-lCN" secondAttribute="centerY" id="Aau-xT-g4a"/>
                             <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="a0s-py-lCN" secondAttribute="bottom" constant="20" id="EO9-sG-He6"/>
+                            <constraint firstItem="AwX-bd-fVV" firstAttribute="leading" secondItem="TNF-M0-Di3" secondAttribute="trailing" constant="8" id="chF-CW-29v"/>
+                            <constraint firstItem="TNF-M0-Di3" firstAttribute="centerY" secondItem="AwX-bd-fVV" secondAttribute="centerY" id="jPb-ab-nkh"/>
+                            <constraint firstItem="AwX-bd-fVV" firstAttribute="top" secondItem="R3G-0J-xcQ" secondAttribute="bottom" constant="20" id="tKa-IO-Ywx"/>
                             <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="5XR-NU-mxp" secondAttribute="bottom" constant="20" id="u77-Cu-o5e"/>
                         </constraints>
                     </view>
@@ -65,6 +84,8 @@
                         <outlet property="infoButton" destination="5XR-NU-mxp" id="R74-s1-iBu"/>
                         <outlet property="recordButton" destination="a0s-py-lCN" id="XHF-I3-OmF"/>
                         <outlet property="recordLabel" destination="xex-2E-MLH" id="CTn-WW-Yms"/>
+                        <outlet property="timeLabel" destination="AwX-bd-fVV" id="uSB-tv-oxa"/>
+                        <outlet property="timeSlider" destination="TNF-M0-Di3" id="ns9-Dp-V8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izv-yc-LAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,7 +112,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IR-GR-gix">
-                                <rect key="frame" x="0.0" y="40" width="600" height="122"/>
+                                <rect key="frame" x="0.0" y="239" width="600" height="122"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-Uc-3rS">
                                         <rect key="frame" x="20" y="0.0" width="560" height="122"/>
@@ -118,9 +139,9 @@
                             <constraint firstItem="2IR-GR-gix" firstAttribute="leading" secondItem="Ckv-pa-9AN" secondAttribute="leadingMargin" constant="-20" id="1BP-iU-sKQ"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="centerY" secondItem="Ckv-pa-9AN" secondAttribute="centerY" id="4Rd-l5-psg"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="width" relation="lessThanOrEqual" secondItem="Ckv-pa-9AN" secondAttribute="width" id="8nD-kr-S8I"/>
+                            <constraint firstItem="2IR-GR-gix" firstAttribute="centerY" secondItem="Ckv-pa-9AN" secondAttribute="centerY" id="JzB-Kb-mP6"/>
                             <constraint firstItem="2IR-GR-gix" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="LkW-rV-7KD"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="gD3-v9-1rl"/>
-                            <constraint firstItem="2IR-GR-gix" firstAttribute="top" secondItem="W2F-A1-5F9" secondAttribute="bottom" constant="20" id="kVW-Rq-2aS"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="width" secondItem="Ckv-pa-9AN" secondAttribute="width" priority="750" id="pe9-y4-2Cl"/>
                         </constraints>
                     </view>

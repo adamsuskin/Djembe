@@ -98,7 +98,7 @@
         
         NSString *file = ([self isBassHit] ? [self bassSoundFile] : [self edgeSoundFile]);
         
-        [[[ASSoundManager sharedManager] timers] addObject:[NSTimer scheduledTimerWithTimeInterval:4.0
+        [[[ASSoundManager sharedManager] timers] addObject:[NSTimer scheduledTimerWithTimeInterval:[[ASSoundManager sharedManager] loopTime]
                                                                   target:[ASSoundManager sharedManager]
                                                                 selector:@selector(loopPlay:)
                                                                 userInfo:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObject:file]
