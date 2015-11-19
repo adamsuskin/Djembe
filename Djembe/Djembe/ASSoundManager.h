@@ -12,8 +12,13 @@
 @interface ASSoundManager : NSObject
 
 @property (strong, nonatomic) NSMutableDictionary *soundDictionary;
+@property (assign, nonatomic) BOOL isRecording;
+
+@property (strong, nonatomic) NSMutableArray *timers;
 
 +(id)sharedManager;
+
+-(void)loopPlay:(id)timer;
 
 -(BOOL)createSoundNamed:(NSString *)soundFilename ofType:(NSString *)type;
 -(void)playSoundNamed:(NSString *)soundFilename ofType:(NSString *)type;

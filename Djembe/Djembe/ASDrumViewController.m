@@ -10,6 +10,9 @@
 
 @interface ASDrumViewController ()
 
+@property (assign) BOOL isRecording;
+@property (assign) BOOL isBassHit;
+
 @end
 
 @implementation ASDrumViewController
@@ -19,6 +22,10 @@
     if (self) {
         [self setIndex:idf];
         [self setDrum:drum];
+        [self setIsRecording:NO];
+        [self setIsBassHit:YES];
+        
+        [self setTimers:[[NSMutableArray alloc] init]];
         
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         [tapGestureRecognizer setNumberOfTapsRequired:1];
@@ -69,50 +76,64 @@
     return 2;
 }
 
-    -(void)tap:(UITapGestureRecognizer *)tapGestureRecognizer {
-        
-        CGPoint location = [tapGestureRecognizer locationInView:[self view]];
-        
-        switch ([self validateTouchLocation:location]) {
-            case 0:
-                return;
-            case 1:
-                [[ASSoundManager sharedManager] playSoundNamed:[self bassSoundFile] ofType:nil];
-                break;
-            case 2:
-            default:
-                [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
-                break;
-        }
-        
-        float tapWidth = 30;
-        ASDrumTapView *drumTapView = [[ASDrumTapView alloc] initWithFrame:CGRectMake(location.x - (tapWidth / 2), location.y - (tapWidth / 2), tapWidth, tapWidth)];
-        [drumTapView setBackgroundColor:[UIColor clearColor]];
-        [drumTapView setNeedsDisplay];
-        [[self view] addSubview:drumTapView];
-            
-        float animDuration = 0.75;
-        CGRect frame = [drumTapView frame];
-        
-        [UIView animateKeyframesWithDuration:animDuration
-                                       delay:0.0
-                                     options:UIViewKeyframeAnimationOptionAllowUserInteraction
-                                  animations:^{
-                                      [UIView addKeyframeWithRelativeStartTime:0
-                                                              relativeDuration:animDuration
-                                                                    animations:^{
-                                                                        [drumTapView setFrame:CGRectInset(frame, -frame.size.width, -frame.size.height)];
-                                                                    }];
-                                      [UIView addKeyframeWithRelativeStartTime:0
-                                                              relativeDuration:3*animDuration/5
-                                                                    animations:^{
-                                                                        [[drumTapView layer] setOpacity:0.0];
-                                                                    }];
-                                  }
-                                  completion:^(BOOL finished) {
-                                      [drumTapView removeFromSuperview];
-                                  }];
+-(void)tap:(UITapGestureRecognizer *)tapGestureRecognizer {
+    
+    CGPoint location = [tapGestureRecognizer locationInView:[self view]];
+    
+    switch ([self validateTouchLocation:location]) {
+        case 0:
+            return;
+        case 1:
+            [[ASSoundManager sharedManager] playSoundNamed:[self bassSoundFile] ofType:nil];
+            [self setIsBassHit:YES];
+            break;
+        case 2:
+        default:
+            [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
+            [self setIsBassHit:NO];
+            break;
     }
+    
+    if([[ASSoundManager sharedManager] isRecording]) {
+        
+        NSString *file = ([self isBassHit] ? [self bassSoundFile] : [self edgeSoundFile]);
+        
+        [[[ASSoundManager sharedManager] timers] addObject:[NSTimer scheduledTimerWithTimeInterval:4.0
+                                                                  target:[ASSoundManager sharedManager]
+                                                                selector:@selector(loopPlay:)
+                                                                userInfo:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObject:file]
+                                                                                                     forKeys:[NSArray arrayWithObject:@"soundfile"]]
+                                                                 repeats:YES]];
+    }
+    
+    float tapWidth = 30;
+    ASDrumTapView *drumTapView = [[ASDrumTapView alloc] initWithFrame:CGRectMake(location.x - (tapWidth / 2), location.y - (tapWidth / 2), tapWidth, tapWidth)];
+    [drumTapView setBackgroundColor:[UIColor clearColor]];
+    [drumTapView setNeedsDisplay];
+    [[self view] addSubview:drumTapView];
+        
+    float animDuration = 0.75;
+    CGRect frame = [drumTapView frame];
+    
+    [UIView animateKeyframesWithDuration:animDuration
+                                   delay:0.0
+                                 options:UIViewKeyframeAnimationOptionAllowUserInteraction
+                              animations:^{
+                                  [UIView addKeyframeWithRelativeStartTime:0
+                                                          relativeDuration:animDuration
+                                                                animations:^{
+                                                                    [drumTapView setFrame:CGRectInset(frame, -frame.size.width, -frame.size.height)];
+                                                                }];
+                                  [UIView addKeyframeWithRelativeStartTime:0
+                                                          relativeDuration:3*animDuration/5
+                                                                animations:^{
+                                                                    [[drumTapView layer] setOpacity:0.0];
+                                                                }];
+                              }
+                              completion:^(BOOL finished) {
+                                  [drumTapView removeFromSuperview];
+                              }];
+}
 
 -(void)animateTitle {
     
@@ -131,12 +152,6 @@
                      }];
 }
 
-- (IBAction)infoButtonTapped:(id)sender {
-    
-    [self presentViewController:[self infoController]
-                       animated:YES
-                     completion:^{
-                     }];
-}
+
 
 @end

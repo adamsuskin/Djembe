@@ -69,12 +69,32 @@
     [(ASDrumViewController *)[[[self pageViewController] viewControllers] objectAtIndex:0] animateTitle];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [[self view] bringSubviewToFront:[self infoButton]];
+    [[self view] bringSubviewToFront:[self recordButton]];
+    [[[self infoButton] layer] setOpacity:0];
+    [[[self infoButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
+    [[[self recordButton] layer] setOpacity:0];
+    [[[self recordButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
+}
+
 -(void)viewDidAppear:(BOOL)animated {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Welcome!"
                                                                    message:@"Make sure to turn off vibrate and turn up the volume!"
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Sounds good!" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Sounds good!" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [UIView beginAnimations:@"opacity" context:nil];
+        [UIView setAnimationDuration:0.25];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        
+        [[[self infoButton] layer] setOpacity:1.0];
+        [[[self infoButton] layer] setTransform:CATransform3DIdentity];
+        [[[self recordButton] layer] setOpacity:1.0];
+        [[[self recordButton] layer] setTransform:CATransform3DIdentity];
+        
+        [UIView commitAnimations];
+    }];
     [alert addAction:ok];
     
     [self presentViewController:alert animated:YES completion:nil];
@@ -103,9 +123,33 @@
        transitionCompleted:(BOOL)completed {
     
     if(completed) {
-        [(ASDrumViewController *)[[pageViewController viewControllers] objectAtIndex:0] animateTitle];
+        [[self getActiveController] animateTitle];
     }
     
+}
+
+- (ASDrumViewController *)getActiveController {
+    return (ASDrumViewController *)[[[self pageViewController] viewControllers] objectAtIndex:0];
+}
+
+- (IBAction)infoButtonTapped:(id)sender {
+    
+    ASDrumViewController *activeController = [self getActiveController];
+    [activeController presentViewController:activeController.infoController
+                       animated:YES
+                     completion:^{
+                     }];
+}
+
+- (IBAction)recordButtonTapped:(id)sender {
+    if([[ASSoundManager sharedManager] isRecording]) {
+        [[ASSoundManager sharedManager] setIsRecording:NO];
+        [[self recordButton] setImage:[UIImage imageNamed:@"Record Button.png"] forState:UIControlStateNormal];
+    }
+    else {
+        [[ASSoundManager sharedManager] setIsRecording:YES];
+        [[self recordButton] setImage:[UIImage imageNamed:@"Record Button Green.png"] forState:UIControlStateNormal];
+    }
 }
 
 @end

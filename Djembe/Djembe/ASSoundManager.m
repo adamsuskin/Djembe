@@ -24,13 +24,18 @@
 -(id)init {
     self = [super init];
     if (self) {
-        [self setSoundDictionary:[[NSMutableDictionary alloc] initWithCapacity:8]];
+        [self setSoundDictionary:[[NSMutableDictionary alloc] initWithCapacity:9]];
+        [self setIsRecording:NO];
+        [self setTimers:[[NSMutableArray alloc] init]];
     }
     return self;
 }
 
 -(void)dealloc {
     [self cleanUpSounds];
+    for (NSTimer *timer in [self timers]) {
+        [timer invalidate];
+    }
 }
 
 -(void)cleanUpSounds {
@@ -69,6 +74,10 @@
         [self createSoundNamed:soundFilename ofType:type];
     
     AudioServicesPlaySystemSound([self getSoundID:soundFilename]);
+}
+
+- (void)loopPlay:(id)timer {
+    [self playSoundNamed:[(NSDictionary *)[(NSTimer *)timer userInfo] objectForKey:@"soundfile"] ofType:nil];
 }
 
 @end
