@@ -1,5 +1,7 @@
 platform :ios, '9.0'
 
-target 'Djembe' do
+target 'Djun Djun' do
+
+pod "JMMarkSlider", "~> 1.0"
 
 end

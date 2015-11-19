@@ -27,6 +27,7 @@
         [self setSoundDictionary:[[NSMutableDictionary alloc] initWithCapacity:9]];
         [self setIsRecording:NO];
         [self setTimers:[[NSMutableArray alloc] init]];
+        [self setLoopTime:4.0];
     }
     return self;
 }

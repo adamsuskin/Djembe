@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSMutableDictionary *soundDictionary;
 @property (assign, nonatomic) BOOL isRecording;
 
+@property (assign, nonatomic) float loopTime;
+
 @property (strong, nonatomic) NSMutableArray *timers;
 
 +(id)sharedManager;
