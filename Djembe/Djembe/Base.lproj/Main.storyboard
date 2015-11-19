@@ -30,14 +30,14 @@
                                     <action selector="infoButtonTapped:" destination="dWd-PW-nLm" eventType="touchUpInside" id="OM2-9t-I9D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-py-lCN">
-                                <rect key="frame" x="20" y="550" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-py-lCN">
+                                <rect key="frame" x="20" y="540" width="40" height="40"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="a0s-py-lCN" secondAttribute="height" multiplier="49:30" id="FHr-WJ-Wvh"/>
-                                    <constraint firstAttribute="width" constant="49" id="g3w-3J-QjQ"/>
+                                    <constraint firstAttribute="width" constant="40" id="4Gn-ac-2Zg"/>
+                                    <constraint firstAttribute="width" secondItem="a0s-py-lCN" secondAttribute="height" multiplier="1:1" id="DqG-zV-ceh"/>
                                 </constraints>
-                                <state key="normal" title="Record"/>
+                                <state key="normal" image="Record Button.png"/>
                                 <connections>
                                     <action selector="recordButtonTapped:" destination="dWd-PW-nLm" eventType="touchUpInside" id="TL9-KT-2fW"/>
                                 </connections>
@@ -46,9 +46,9 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="a0s-py-lCN" firstAttribute="leading" secondItem="gA8-w2-4P2" secondAttribute="leadingMargin" id="AEm-8x-H5T"/>
                             <constraint firstItem="5XR-NU-mxp" firstAttribute="trailing" secondItem="gA8-w2-4P2" secondAttribute="trailingMargin" id="Aa0-rg-4zD"/>
-                            <constraint firstItem="a0s-py-lCN" firstAttribute="leading" secondItem="gA8-w2-4P2" secondAttribute="leadingMargin" id="qos-2G-znF"/>
-                            <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="a0s-py-lCN" secondAttribute="bottom" constant="20" id="rrC-NH-20A"/>
+                            <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="a0s-py-lCN" secondAttribute="bottom" constant="20" id="EO9-sG-He6"/>
                             <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="5XR-NU-mxp" secondAttribute="bottom" constant="20" id="u77-Cu-o5e"/>
                         </constraints>
                     </view>
@@ -187,6 +187,7 @@
     </scenes>
     <resources>
         <image name="Info Button.png" width="72" height="72"/>
+        <image name="Record Button.png" width="72" height="72"/>
         <image name="X_Button_Blue.png" width="164" height="164"/>
     </resources>
 </document>

@@ -144,9 +144,11 @@
 - (IBAction)recordButtonTapped:(id)sender {
     if([[ASSoundManager sharedManager] isRecording]) {
         [[ASSoundManager sharedManager] setIsRecording:NO];
+        [[self recordButton] setImage:[UIImage imageNamed:@"Record Button.png"] forState:UIControlStateNormal];
     }
     else {
         [[ASSoundManager sharedManager] setIsRecording:YES];
+        [[self recordButton] setImage:[UIImage imageNamed:@"Record Button Green.png"] forState:UIControlStateNormal];
     }
 }
 
