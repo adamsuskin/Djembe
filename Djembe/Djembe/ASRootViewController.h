@@ -16,4 +16,5 @@
 @property (strong, nonatomic) NSArray *drumViewControllers;
 @property (strong, nonatomic) IBOutlet UIButton *infoButton;
 @property (strong, nonatomic) IBOutlet UIButton *recordButton;
+@property (strong, nonatomic) IBOutlet UILabel *recordLabel;
 @end

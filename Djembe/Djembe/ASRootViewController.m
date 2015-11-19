@@ -72,6 +72,8 @@
 -(void)viewWillAppear:(BOOL)animated {
     [[self view] bringSubviewToFront:[self infoButton]];
     [[self view] bringSubviewToFront:[self recordButton]];
+    [[self view] bringSubviewToFront:[self recordLabel]];
+    [[self recordLabel] setHidden:YES];
     [[[self infoButton] layer] setOpacity:0];
     [[[self infoButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
     [[[self recordButton] layer] setOpacity:0];
@@ -144,10 +146,12 @@
 - (IBAction)recordButtonTapped:(id)sender {
     if([[ASSoundManager sharedManager] isRecording]) {
         [[ASSoundManager sharedManager] setIsRecording:NO];
+        [[self recordLabel] setHidden:YES];
         [[self recordButton] setImage:[UIImage imageNamed:@"Record Button.png"] forState:UIControlStateNormal];
     }
     else {
         [[ASSoundManager sharedManager] setIsRecording:YES];
+        [[self recordLabel] setHidden:NO];
         [[self recordButton] setImage:[UIImage imageNamed:@"Record Button Green.png"] forState:UIControlStateNormal];
     }
 }
