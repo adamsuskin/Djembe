@@ -14,5 +14,6 @@
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (assign, nonatomic) NSUInteger activeIndex;
 @property (strong, nonatomic) NSArray *drumViewControllers;
+@property (strong, nonatomic) IBOutlet UIButton *infoButton;
 
 @end

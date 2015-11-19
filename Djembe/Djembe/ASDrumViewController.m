@@ -94,11 +94,15 @@
             break;
     }
     
-    if([self isRecording]) {
-        [[self timers] addObject:[NSTimer scheduledTimerWithTimeInterval:4.0
-                                                                  target:self
+    if([[ASSoundManager sharedManager] isRecording]) {
+        
+        NSString *file = ([self isBassHit] ? [self bassSoundFile] : [self edgeSoundFile]);
+        
+        [[[ASSoundManager sharedManager] timers] addObject:[NSTimer scheduledTimerWithTimeInterval:4.0
+                                                                  target:[ASSoundManager sharedManager]
                                                                 selector:@selector(loopPlay:)
-                                                                userInfo:[NSNumber numberWithBool:[self isBassHit]]
+                                                                userInfo:[NSDictionary dictionaryWithObjects:[NSArray arrayWithObject:file]
+                                                                                                     forKeys:[NSArray arrayWithObject:@"soundfile"]]
                                                                  repeats:YES]];
     }
     
@@ -148,30 +152,13 @@
                      }];
 }
 
-- (void)loopPlay:(id)timer {
-    if([(NSNumber *)[(NSTimer *)timer userInfo] boolValue])
-        [[ASSoundManager sharedManager] playSoundNamed:[self bassSoundFile] ofType:nil];
-    else
-        [[ASSoundManager sharedManager] playSoundNamed:[self edgeSoundFile] ofType:nil];
-}
-
 - (IBAction)recordButtonTapped:(id)sender {
-    if([self isRecording]) {
-        [self setIsRecording:NO];
-        [[ASSoundManager sharedManager] stopMetronome];
+    if([[ASSoundManager sharedManager] isRecording]) {
+        [[ASSoundManager sharedManager] setIsRecording:NO];
     }
     else {
-        [self setIsRecording:YES];
-        [[ASSoundManager sharedManager] startMetronome];
+        [[ASSoundManager sharedManager] setIsRecording:YES];
     }
-}
-
-- (IBAction)infoButtonTapped:(id)sender {
-    
-    [self presentViewController:[self infoController]
-                       animated:YES
-                     completion:^{
-                     }];
 }
 
 @end

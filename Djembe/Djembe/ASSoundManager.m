@@ -25,22 +25,17 @@
     self = [super init];
     if (self) {
         [self setSoundDictionary:[[NSMutableDictionary alloc] initWithCapacity:9]];
-        [self createMetronome];
-        
+        [self setIsRecording:NO];
+        [self setTimers:[[NSMutableArray alloc] init]];
     }
     return self;
 }
 
 -(void)dealloc {
     [self cleanUpSounds];
-}
-
--(void)createMetronome {
-    [self setMetronome:[NSTimer timerWithTimeInterval:1.0
-                                               target:self
-                                             selector:@selector(playMetronome)
-                                             userInfo:nil
-                                              repeats:YES]];
+    for (NSTimer *timer in [self timers]) {
+        [timer invalidate];
+    }
 }
 
 -(void)cleanUpSounds {
@@ -81,18 +76,8 @@
     AudioServicesPlaySystemSound([self getSoundID:soundFilename]);
 }
 
--(void)playMetronome {
-    [self playSoundNamed:@"Metronome.wav" ofType:nil];
-}
-
--(void)startMetronome {
-    [[NSRunLoop mainRunLoop] addTimer:[self metronome] forMode:NSDefaultRunLoopMode];
-}
-
--(void)stopMetronome {
-    [[self metronome] invalidate];
-    
-    [self createMetronome];
+- (void)loopPlay:(id)timer {
+    [self playSoundNamed:[(NSDictionary *)[(NSTimer *)timer userInfo] objectForKey:@"soundfile"] ofType:nil];
 }
 
 @end

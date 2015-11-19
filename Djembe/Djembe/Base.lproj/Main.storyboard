@@ -17,9 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="gA8-w2-4P2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XR-NU-mxp">
+                                <rect key="frame" x="540" y="540" width="40" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5XR-NU-mxp" secondAttribute="height" multiplier="1:1" id="BFu-J5-70a"/>
+                                    <constraint firstAttribute="width" constant="40" id="LvP-de-FsX"/>
+                                </constraints>
+                                <state key="normal" image="Info Button.png"/>
+                                <connections>
+                                    <action selector="infoButtonTapped:" destination="dWd-PW-nLm" eventType="touchUpInside" id="OM2-9t-I9D"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5XR-NU-mxp" firstAttribute="trailing" secondItem="gA8-w2-4P2" secondAttribute="trailingMargin" id="Aa0-rg-4zD"/>
+                            <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="5XR-NU-mxp" secondAttribute="bottom" constant="20" id="u77-Cu-o5e"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoButton" destination="5XR-NU-mxp" id="R74-s1-iBu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izv-yc-LAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,24 +65,6 @@
                                     <constraint firstAttribute="width" secondItem="fJZ-VE-asq" secondAttribute="height" multiplier="1:1" id="QMf-AW-PM9"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XR-NU-mxp">
-                                <rect key="frame" x="540" y="540" width="40" height="40"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="1Fj-Ic-W0U"/>
-                                    <constraint firstAttribute="width" secondItem="5XR-NU-mxp" secondAttribute="height" multiplier="1:1" id="BJG-4u-nTB"/>
-                                    <constraint firstAttribute="width" constant="30" id="WeU-CY-D3x"/>
-                                </constraints>
-                                <state key="normal" image="Info Button.png"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="WeU-CY-D3x"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="infoButtonTapped:" destination="sCv-Ae-7Fy" eventType="touchUpInside" id="qeB-jx-W59"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IR-GR-gix">
                                 <rect key="frame" x="0.0" y="40" width="600" height="122"/>
                                 <subviews>
@@ -102,14 +105,12 @@
                             <constraint firstItem="2IR-GR-gix" firstAttribute="leading" secondItem="Ckv-pa-9AN" secondAttribute="leadingMargin" constant="-20" id="1BP-iU-sKQ"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="centerY" secondItem="Ckv-pa-9AN" secondAttribute="centerY" id="4Rd-l5-psg"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="width" relation="lessThanOrEqual" secondItem="Ckv-pa-9AN" secondAttribute="width" id="8nD-kr-S8I"/>
-                            <constraint firstItem="Q3d-1C-Du8" firstAttribute="top" secondItem="5XR-NU-mxp" secondAttribute="bottom" constant="20" id="Gsv-91-D0x"/>
                             <constraint firstItem="Q3d-1C-Du8" firstAttribute="top" secondItem="a0s-py-lCN" secondAttribute="bottom" constant="20" id="LEm-dE-ehL"/>
                             <constraint firstItem="2IR-GR-gix" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="LkW-rV-7KD"/>
                             <constraint firstItem="a0s-py-lCN" firstAttribute="leading" secondItem="Ckv-pa-9AN" secondAttribute="leadingMargin" id="cup-kB-fy4"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="gD3-v9-1rl"/>
                             <constraint firstItem="2IR-GR-gix" firstAttribute="top" secondItem="W2F-A1-5F9" secondAttribute="bottom" constant="20" id="kVW-Rq-2aS"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="width" secondItem="Ckv-pa-9AN" secondAttribute="width" priority="750" id="pe9-y4-2Cl"/>
-                            <constraint firstItem="5XR-NU-mxp" firstAttribute="trailing" secondItem="Ckv-pa-9AN" secondAttribute="trailingMargin" id="tty-c9-Rja"/>
                         </constraints>
                     </view>
                     <connections>
