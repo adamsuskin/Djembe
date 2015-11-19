@@ -152,13 +152,6 @@
                      }];
 }
 
-- (IBAction)recordButtonTapped:(id)sender {
-    if([[ASSoundManager sharedManager] isRecording]) {
-        [[ASSoundManager sharedManager] setIsRecording:NO];
-    }
-    else {
-        [[ASSoundManager sharedManager] setIsRecording:YES];
-    }
-}
+
 
 @end

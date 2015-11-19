@@ -30,16 +30,31 @@
                                     <action selector="infoButtonTapped:" destination="dWd-PW-nLm" eventType="touchUpInside" id="OM2-9t-I9D"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-py-lCN">
+                                <rect key="frame" x="20" y="550" width="49" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="a0s-py-lCN" secondAttribute="height" multiplier="49:30" id="FHr-WJ-Wvh"/>
+                                    <constraint firstAttribute="width" constant="49" id="g3w-3J-QjQ"/>
+                                </constraints>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="recordButtonTapped:" destination="dWd-PW-nLm" eventType="touchUpInside" id="TL9-KT-2fW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5XR-NU-mxp" firstAttribute="trailing" secondItem="gA8-w2-4P2" secondAttribute="trailingMargin" id="Aa0-rg-4zD"/>
+                            <constraint firstItem="a0s-py-lCN" firstAttribute="leading" secondItem="gA8-w2-4P2" secondAttribute="leadingMargin" id="qos-2G-znF"/>
+                            <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="a0s-py-lCN" secondAttribute="bottom" constant="20" id="rrC-NH-20A"/>
                             <constraint firstItem="CFH-E9-tsR" firstAttribute="top" secondItem="5XR-NU-mxp" secondAttribute="bottom" constant="20" id="u77-Cu-o5e"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="infoButton" destination="5XR-NU-mxp" id="R74-s1-iBu"/>
+                        <outlet property="recordButton" destination="a0s-py-lCN" id="XHF-I3-OmF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izv-yc-LAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,18 +101,6 @@
                                     <constraint firstItem="xXu-Uc-3rS" firstAttribute="centerY" secondItem="2IR-GR-gix" secondAttribute="centerY" id="tZ3-cb-uIe"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-py-lCN">
-                                <rect key="frame" x="20" y="550" width="49" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="a0s-py-lCN" secondAttribute="height" multiplier="49:30" id="AMW-jp-1y0"/>
-                                    <constraint firstAttribute="width" constant="49" id="SfL-rY-hOZ"/>
-                                </constraints>
-                                <state key="normal" title="Record"/>
-                                <connections>
-                                    <action selector="recordButtonTapped:" destination="sCv-Ae-7Fy" eventType="touchUpInside" id="FLB-CO-prv"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,9 +108,7 @@
                             <constraint firstItem="2IR-GR-gix" firstAttribute="leading" secondItem="Ckv-pa-9AN" secondAttribute="leadingMargin" constant="-20" id="1BP-iU-sKQ"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="centerY" secondItem="Ckv-pa-9AN" secondAttribute="centerY" id="4Rd-l5-psg"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="width" relation="lessThanOrEqual" secondItem="Ckv-pa-9AN" secondAttribute="width" id="8nD-kr-S8I"/>
-                            <constraint firstItem="Q3d-1C-Du8" firstAttribute="top" secondItem="a0s-py-lCN" secondAttribute="bottom" constant="20" id="LEm-dE-ehL"/>
                             <constraint firstItem="2IR-GR-gix" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="LkW-rV-7KD"/>
-                            <constraint firstItem="a0s-py-lCN" firstAttribute="leading" secondItem="Ckv-pa-9AN" secondAttribute="leadingMargin" id="cup-kB-fy4"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="centerX" secondItem="Ckv-pa-9AN" secondAttribute="centerX" id="gD3-v9-1rl"/>
                             <constraint firstItem="2IR-GR-gix" firstAttribute="top" secondItem="W2F-A1-5F9" secondAttribute="bottom" constant="20" id="kVW-Rq-2aS"/>
                             <constraint firstItem="fJZ-VE-asq" firstAttribute="width" secondItem="Ckv-pa-9AN" secondAttribute="width" priority="750" id="pe9-y4-2Cl"/>

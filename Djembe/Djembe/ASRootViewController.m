@@ -71,8 +71,11 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [[self view] bringSubviewToFront:[self infoButton]];
+    [[self view] bringSubviewToFront:[self recordButton]];
     [[[self infoButton] layer] setOpacity:0];
     [[[self infoButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
+    [[[self recordButton] layer] setOpacity:0];
+    [[[self recordButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -87,6 +90,8 @@
         
         [[[self infoButton] layer] setOpacity:1.0];
         [[[self infoButton] layer] setTransform:CATransform3DIdentity];
+        [[[self recordButton] layer] setOpacity:1.0];
+        [[[self recordButton] layer] setTransform:CATransform3DIdentity];
         
         [UIView commitAnimations];
     }];
@@ -134,6 +139,15 @@
                        animated:YES
                      completion:^{
                      }];
+}
+
+- (IBAction)recordButtonTapped:(id)sender {
+    if([[ASSoundManager sharedManager] isRecording]) {
+        [[ASSoundManager sharedManager] setIsRecording:NO];
+    }
+    else {
+        [[ASSoundManager sharedManager] setIsRecording:YES];
+    }
 }
 
 @end
