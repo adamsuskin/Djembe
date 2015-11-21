@@ -69,7 +69,6 @@
     [[self view] addSubview:[[self pageViewController] view]];
     [[self pageViewController] didMoveToParentViewController:self];
     
-    [(ASDrumViewController *)[[[self pageViewController] viewControllers] objectAtIndex:0] animateTitle];
 }
 
 -(void)hide:(UIView *)view {
@@ -133,12 +132,11 @@
     [[self timeSlider] setUnselectedBarColor:greenColor];
     [[self timeSlider] setSelectedBarColor:greenColor];
     [[self timeSlider] setHandlerColor:[UIColor whiteColor]];
-    [[self timeSlider] setMarkColor:[UIColor colorWithRed:7/255.f green:156/255.f blue:0 alpha:1.0]];
-    [[self timeSlider] setMarkWidth:2.0];
-    [[self timeSlider] setMarkPositions:@[@33,@66]];
+    [[self timeSlider] setMarkPositions:nil];
     
     [[self timeSlider] setContinuous:YES];
     [[self timeSlider] addTarget:self action:@selector(timeSliderChanged:) forControlEvents:UIControlEventValueChanged];
+    [[self timeSlider] addTarget:self action:@selector(timeSliderStopped:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
     
     [self hide:[self recordLabel]];
     [self hide:[self timeSlider]];
@@ -148,8 +146,20 @@
     [[self timeLabel] setHidden:YES];
 }
 
--(void)timeSliderChanged:(id)slider {
+-(float)calculateValueForSlider:(id)slider {
     float val = [(UISlider *)slider value];
+    return 4 * roundf(val / 4);
+}
+
+-(void)timeSliderStopped:(id)slider {
+
+    [(UISlider *)slider setValue:[self calculateValueForSlider:slider]];
+    [self timeSliderChanged:slider];
+}
+
+-(void)timeSliderChanged:(id)slider {
+    float val = [self calculateValueForSlider:slider];
+    
     [[self timeLabel] setText:[NSString stringWithFormat:@"%.1fs", val]];
     [[ASSoundManager sharedManager] setLoopTime:val];
 }
@@ -170,6 +180,8 @@
         [[[self recordButton] layer] setTransform:CATransform3DIdentity];
         
         [UIView commitAnimations];
+        
+        [(ASDrumViewController *)[[[self pageViewController] viewControllers] objectAtIndex:0] animateTitle];
     }];
     [alert addAction:ok];
     
