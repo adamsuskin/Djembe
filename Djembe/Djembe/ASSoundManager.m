@@ -34,9 +34,25 @@
 
 -(void)dealloc {
     [self cleanUpSounds];
+    [self invalidateTimers];
+}
+
+-(void)undoLastTimer {
+    if([[self timers] count] > 0) {
+        [(NSTimer *)[[self timers] lastObject] invalidate];
+        [[self timers] removeLastObject];
+    }
+}
+
+-(void)invalidateTimers {
     for (NSTimer *timer in [self timers]) {
         [timer invalidate];
     }
+    [[self timers] removeAllObjects];
+}
+
+-(BOOL)isLooping {
+    return [[self timers] count] > 0;
 }
 
 -(void)cleanUpSounds {

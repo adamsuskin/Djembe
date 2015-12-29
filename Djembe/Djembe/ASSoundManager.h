@@ -20,6 +20,10 @@
 
 +(id)sharedManager;
 
+-(BOOL)isLooping;
+
+-(void)undoLastTimer;
+-(void)invalidateTimers;
 -(void)loopPlay:(id)timer;
 
 -(BOOL)createSoundNamed:(NSString *)soundFilename ofType:(NSString *)type;

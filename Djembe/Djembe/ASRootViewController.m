@@ -85,12 +85,16 @@
                          [self hide:[self recordLabel]];
                          [self hide:[self timeLabel]];
                          [self hide:[self timeSlider]];
+                         [self hide:[self clearButton]];
+                         [self hide:[self undoButton]];
                          [self show:[self infoButton]];
                      }
                      completion:^(BOOL finished) {
                          [[self recordLabel] setHidden:YES];
                          [[self timeLabel] setHidden:YES];
                          [[self timeSlider] setHidden:YES];
+                         [[self clearButton] setHidden:YES];
+                         [[self undoButton] setHidden:YES];
                      }];
 }
 
@@ -109,6 +113,8 @@
                          [self show:[self recordLabel]];
                          [self show:[self timeLabel]];
                          [self show:[self timeSlider]];
+                         [self show:[self clearButton]];
+                         [self show:[self undoButton]];
                          [self hide:[self infoButton]];
                      }
                      completion:^(BOOL finished) {
@@ -117,13 +123,23 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [[self view] bringSubviewToFront:[self recordControlView]];
     [[self view] bringSubviewToFront:[self infoButton]];
+    [[self view] bringSubviewToFront:[self clearButton]];
+    [[self view] bringSubviewToFront:[self undoButton]];
     [[self view] bringSubviewToFront:[self recordButton]];
     [[self view] bringSubviewToFront:[self recordLabel]];
     [[[self infoButton] layer] setOpacity:0];
     [[[self infoButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
     [[[self recordButton] layer] setOpacity:0];
     [[[self recordButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
+    
+    [[[self clearButton] layer] setOpacity:0];
+    [[[self clearButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
+    [[self clearButton] setHidden:YES];
+    [[[self undoButton] layer] setOpacity:0];
+    [[[self undoButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
+    [[self undoButton] setHidden:YES];
     
     UIColor *greenColor = [UIColor colorWithRed:11/255.f green:223/255.f blue:0 alpha:1.0];
     
@@ -240,6 +256,14 @@
         [self showRecordingViews];
         [[self recordButton] setImage:[UIImage imageNamed:@"Record Button Green.png"] forState:UIControlStateNormal];
     }
+}
+
+- (IBAction)clearButtonTapped:(id)sender {
+    [[ASSoundManager sharedManager] invalidateTimers];
+}
+
+- (IBAction)undoButtonTapped:(id)sender {
+    [[ASSoundManager sharedManager] undoLastTimer];
 }
 
 @end
