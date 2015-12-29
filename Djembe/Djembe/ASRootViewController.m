@@ -21,19 +21,9 @@
     //195089 - red: 25 green: 80 blue: 137
     _themeColor = [UIColor colorWithRed:25/255.f green:80/255.f blue:137/255.f alpha:1.0];
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:[[self view] bounds]];
-    [backgroundView setContentMode:UIViewContentModeTopLeft];
-    [backgroundView setImage:[UIImage imageNamed:@"dirt.jpg"]];
-    [[self view] addSubview:backgroundView];
-    
     //Set initial options
-    [self setPageViewController:[[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
-                                                                navigationOrientation: UIPageViewControllerNavigationOrientationHorizontal options:nil]];
-    [[self pageViewController] setDataSource:self];
-    [[self pageViewController] setDelegate:self];
-    //Should occupy whole space of current view controller
-    [[[self pageViewController] view] setFrame:[[self view] bounds]];
-    [[[self pageViewController] view] setMultipleTouchEnabled:YES];
+    [self initializeBackgroundView];
+    [self initializePageViewController];
     
     //Take care of drum view controllers
     ASDrumViewController *djunController = [[ASDrumViewController alloc] initWithID:0 Drum:@"Djun Djun"];
@@ -69,6 +59,23 @@
     [[self view] addSubview:[[self pageViewController] view]];
     [[self pageViewController] didMoveToParentViewController:self];
     
+}
+
+-(void)initializeBackgroundView {
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:[[self view] bounds]];
+    [backgroundView setContentMode:UIViewContentModeTopLeft];
+    [backgroundView setImage:[UIImage imageNamed:@"dirt.jpg"]];
+    [[self view] addSubview:backgroundView];
+}
+
+-(void)initializePageViewController {
+    [self setPageViewController:[[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                                                navigationOrientation: UIPageViewControllerNavigationOrientationHorizontal options:nil]];
+    [[self pageViewController] setDataSource:self];
+    [[self pageViewController] setDelegate:self];
+    //Should occupy whole space of current view controller
+    [[[self pageViewController] view] setFrame:[[self view] bounds]];
+    [[[self pageViewController] view] setMultipleTouchEnabled:YES];
 }
 
 -(void)hide:(UIView *)view {
@@ -129,22 +136,11 @@
     [[self view] bringSubviewToFront:[self undoButton]];
     [[self view] bringSubviewToFront:[self recordButton]];
     [[self view] bringSubviewToFront:[self recordLabel]];
-    [[[self infoButton] layer] setOpacity:0];
-    [[[self infoButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
-    [[[self recordButton] layer] setOpacity:0];
-    [[[self recordButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
-    
-    [[[self clearButton] layer] setOpacity:0];
-    [[[self clearButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
-    [[self clearButton] setHidden:YES];
-    [[[self undoButton] layer] setOpacity:0];
-    [[[self undoButton] layer] setTransform:CATransform3DMakeTranslation(0, 10, 0)];
-    [[self undoButton] setHidden:YES];
-    
-    UIColor *greenColor = [UIColor colorWithRed:11/255.f green:223/255.f blue:0 alpha:1.0];
-    
     [[self view] bringSubviewToFront:[self timeLabel]];
     [[self view] bringSubviewToFront:[self timeSlider]];
+    
+    UIColor *greenColor = [UIColor colorWithRed:11/255.f green:223/255.f blue:0 alpha:1.0];
+
     [[self timeSlider] setUnselectedBarColor:greenColor];
     [[self timeSlider] setSelectedBarColor:greenColor];
     [[self timeSlider] setHandlerColor:[UIColor whiteColor]];
@@ -154,9 +150,17 @@
     [[self timeSlider] addTarget:self action:@selector(timeSliderChanged:) forControlEvents:UIControlEventValueChanged];
     [[self timeSlider] addTarget:self action:@selector(timeSliderStopped:) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside];
     
+    [self hide:[self clearButton]];
+    [self hide:[self undoButton]];
     [self hide:[self recordLabel]];
     [self hide:[self timeSlider]];
     [self hide:[self timeLabel]];
+    [self hide:[self infoButton]];
+    [self hide:[self recordButton]];
+    [[self recordButton] setHidden:YES];
+    [[self infoButton] setHidden:YES];
+    [[self clearButton] setHidden:YES];
+    [[self undoButton] setHidden:YES];
     [[self recordLabel] setHidden:YES];
     [[self timeSlider] setHidden:YES];
     [[self timeLabel] setHidden:YES];
@@ -190,10 +194,8 @@
         [UIView setAnimationDuration:0.25];
         [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         
-        [[[self infoButton] layer] setOpacity:1.0];
-        [[[self infoButton] layer] setTransform:CATransform3DIdentity];
-        [[[self recordButton] layer] setOpacity:1.0];
-        [[[self recordButton] layer] setTransform:CATransform3DIdentity];
+        [self show:[self infoButton]];
+        [self show:[self recordButton]];
         
         [UIView commitAnimations];
         
