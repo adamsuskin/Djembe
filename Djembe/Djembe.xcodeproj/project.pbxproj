@@ -22,6 +22,8 @@
 		663DD3351BE2A91F0055C634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663DD3331BE2A91F0055C634 /* LaunchScreen.storyboard */; };
 		664D36741BF2E20F00CE5C0B /* ASSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 664D36731BF2E20F00CE5C0B /* ASSoundManager.m */; };
 		664D36761BF2E36C00CE5C0B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */; };
+		665C7F9D1C332184007FBB89 /* Clear_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 665C7F9C1C332184007FBB89 /* Clear_Button.png */; };
+		665C7F9F1C3321A1007FBB89 /* Undo_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 665C7F9E1C3321A1007FBB89 /* Undo_Green.png */; };
 		666F766F1BE9B617002A999D /* ASInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 666F766E1BE9B617002A999D /* ASInfoViewController.m */; };
 		6671AAAB1BE8172D00C0B06A /* dirt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6671AAAA1BE8172D00C0B06A /* dirt.jpg */; };
 		66893F261BF40B5000804542 /* DjembeBass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66893F251BF40B5000804542 /* DjembeBass.wav */; };
@@ -65,6 +67,8 @@
 		664D36721BF2E20F00CE5C0B /* ASSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSoundManager.h; sourceTree = "<group>"; };
 		664D36731BF2E20F00CE5C0B /* ASSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSoundManager.m; sourceTree = "<group>"; };
 		664D36751BF2E36C00CE5C0B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		665C7F9C1C332184007FBB89 /* Clear_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clear_Button.png; sourceTree = "<group>"; };
+		665C7F9E1C3321A1007FBB89 /* Undo_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Undo_Green.png; sourceTree = "<group>"; };
 		666F766D1BE9B617002A999D /* ASInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASInfoViewController.h; sourceTree = "<group>"; };
 		666F766E1BE9B617002A999D /* ASInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASInfoViewController.m; sourceTree = "<group>"; };
 		6671AAAA1BE8172D00C0B06A /* dirt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt.jpg; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				660DB3C81BFD005B00A2CD5C /* Metronome.wav */,
 				660DB3C61BF449CA00A2CD5C /* LaunchScreen.png */,
 				66893F351BF4153600804542 /* X_Button_Blue.png */,
+				665C7F9C1C332184007FBB89 /* Clear_Button.png */,
+				665C7F9E1C3321A1007FBB89 /* Undo_Green.png */,
 				66893F331BF4152900804542 /* Info Button.png */,
 				66893F2D1BF40CFF00804542 /* Djun Djun.wav */,
 				66893F291BF40CF700804542 /* AshikoBass.wav */,
@@ -296,7 +302,9 @@
 			files = (
 				66CB61381BE7D920005F7BF7 /* Djun Djun.png in Resources */,
 				661F32031BED9CE2008A3CA7 /* Djun Djun.txt in Resources */,
+				665C7F9F1C3321A1007FBB89 /* Undo_Green.png in Resources */,
 				660DB3C71BF449CA00A2CD5C /* LaunchScreen.png in Resources */,
+				665C7F9D1C332184007FBB89 /* Clear_Button.png in Resources */,
 				66893F341BF4152900804542 /* Info Button.png in Resources */,
 				66893F2B1BF40CF700804542 /* AshikoBass.wav in Resources */,
 				66893F2C1BF40CF700804542 /* AshikoEdge.wav in Resources */,

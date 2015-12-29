@@ -13,7 +13,7 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGMutablePathRef path = CGPathCreateWithEllipseInRect(CGRectInset(rect, 2, 2), NULL);
+    CGMutablePathRef path = (CGMutablePathRef)CGPathCreateWithEllipseInRect(CGRectInset(rect, 2, 2), NULL);
     CGPathAddEllipseInRect(path, NULL, CGRectInset(rect, 4, 4));
     
     [[UIColor clearColor] setFill];
